@@ -11,6 +11,15 @@ const NAV_SERVICES = [
   { name: "UI/UX Design", href: "/services/ui-ux-design", desc: "User research & product design" },
 ];
 
+const NAV_INDUSTRIES = [
+  { name: "Fintech", href: "/industries/fintech", desc: "RBI-compliant payments & lending" },
+  { name: "Healthcare", href: "/industries/healthcare", desc: "ABDM, telemedicine & diagnostic AI" },
+  { name: "E-commerce & D2C", href: "/industries/ecommerce", desc: "UPI, inventory & WhatsApp commerce" },
+  { name: "Logistics", href: "/industries/logistics", desc: "Fleet tracking & route optimization" },
+  { name: "EdTech", href: "/industries/edtech", desc: "LMS, AI tutors & live classes" },
+  { name: "B2B SaaS", href: "/industries/b2b-saas", desc: "Multi-tenant products & billing" },
+];
+
 function CrenosoftLogo({ size = 32 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,11 +34,15 @@ function CrenosoftLogo({ size = 32 }: { size?: number }) {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [indOpen, setIndOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const indCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleDropEnter = () => { if (closeTimer.current) clearTimeout(closeTimer.current); setOpen(true); };
   const handleDropLeave = () => { closeTimer.current = setTimeout(() => setOpen(false), 120); };
+  const handleIndEnter = () => { if (indCloseTimer.current) clearTimeout(indCloseTimer.current); setIndOpen(true); };
+  const handleIndLeave = () => { indCloseTimer.current = setTimeout(() => setIndOpen(false), 120); };
 
   return (
     <header style={{ position:"fixed", top:0, left:0, right:0, zIndex:9999, background:"rgba(255,255,255,0.92)", backdropFilter:"saturate(180%) blur(20px)", WebkitBackdropFilter:"saturate(180%) blur(20px)", borderBottom:"1px solid rgba(0,0,0,0.08)" }}>
@@ -67,6 +80,38 @@ export default function Header() {
             )}
           </div>
 
+          {/* Industries dropdown */}
+          <div onMouseEnter={handleIndEnter} onMouseLeave={handleIndLeave} style={{ position:"relative" }}>
+            <button style={{ background:"none", border:"none", cursor:"pointer", fontSize:13, fontWeight:500, color:"#1d1d1f", display:"flex", alignItems:"center", gap:4, padding:"4px 0" }}>
+              Industries
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ transition:"transform 0.2s", transform:indOpen?"rotate(180deg)":"rotate(0)" }}>
+                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            {indOpen && <div style={{ position:"absolute", top:"100%", left:"-20px", right:"-20px", height:12, background:"transparent" }} />}
+            {indOpen && (
+              <div style={{ position:"absolute", top:"calc(100% + 12px)", left:"50%", transform:"translateX(-50%)", width:320, background:"#fff", borderRadius:18, boxShadow:"0 4px 32px rgba(0,0,0,0.12),0 0 0 1px rgba(0,0,0,0.06)", padding:8, zIndex:1000 }}>
+                {NAV_INDUSTRIES.map(s => (
+                  <Link key={s.href} href={s.href} onClick={() => setIndOpen(false)}
+                    style={{ display:"block", padding:"10px 14px", borderRadius:10, textDecoration:"none", transition:"background 0.15s" }}
+                    onMouseEnter={e=>(e.currentTarget.style.background="#f5f5f7")}
+                    onMouseLeave={e=>(e.currentTarget.style.background="transparent")}>
+                    <div style={{ fontSize:13, fontWeight:600, color:"#1d1d1f" }}>{s.name}</div>
+                    <div style={{ fontSize:12, color:"#86868b", marginTop:1 }}>{s.desc}</div>
+                  </Link>
+                ))}
+                <div style={{ borderTop:"1px solid #f0f0f0", marginTop:4, paddingTop:4 }}>
+                  <Link href="/industries" onClick={() => setIndOpen(false)}
+                    style={{ display:"block", padding:"10px 14px", borderRadius:10, textDecoration:"none", transition:"background 0.15s" }}
+                    onMouseEnter={e=>(e.currentTarget.style.background="#f5f5f7")}
+                    onMouseLeave={e=>(e.currentTarget.style.background="transparent")}>
+                    <div style={{ fontSize:13, fontWeight:600, color:"#3d3d3d" }}>All Industries →</div>
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
           {[{l:"About",h:"/about"},{l:"Blog",h:"/blog"},{l:"Contact",h:"/contact"}].map(n=>(
             <Link key={n.h} href={n.h} style={{ color:"#1d1d1f", textDecoration:"none" }}
               onMouseEnter={e=>(e.currentTarget.style.opacity="0.6")}
@@ -96,6 +141,13 @@ export default function Header() {
         <div style={{ background:"#fff", borderTop:"1px solid #f0f0f0", padding:"16px 22px 24px" }}>
           <p style={{ fontSize:11, fontWeight:700, color:"#86868b", letterSpacing:"0.08em", textTransform:"uppercase", marginBottom:10 }}>Services</p>
           {NAV_SERVICES.map(s=>(
+            <Link key={s.href} href={s.href} onClick={()=>setMenuOpen(false)}
+              style={{ display:"block", padding:"11px 0", color:"#1d1d1f", fontSize:15, fontWeight:500, borderBottom:"1px solid #f5f5f5", textDecoration:"none" }}>
+              {s.name}
+            </Link>
+          ))}
+          <p style={{ fontSize:11, fontWeight:700, color:"#86868b", letterSpacing:"0.08em", textTransform:"uppercase", marginBottom:10, marginTop:16 }}>Industries</p>
+          {NAV_INDUSTRIES.map(s=>(
             <Link key={s.href} href={s.href} onClick={()=>setMenuOpen(false)}
               style={{ display:"block", padding:"11px 0", color:"#1d1d1f", fontSize:15, fontWeight:500, borderBottom:"1px solid #f5f5f5", textDecoration:"none" }}>
               {s.name}
