@@ -20,10 +20,10 @@ const NAV_INDUSTRIES = [
   { name: "B2B SaaS", href: "/industries/b2b-saas", desc: "Multi-tenant products & billing" },
 ];
 
-function CrenosoftLogo({ size = 32 }: { size?: number }) {
+function CrenosoftLogo() {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src="/crenosoft-logo.png" width={size} height={size} alt="Crenosoft" style={{ borderRadius:"50%", objectFit:"cover" }} />
+    <img src="/crenosoft-logo.png" height={36} alt="Crenosoft" style={{ display:"block", width:"auto" }} />
   );
 }
 
@@ -44,9 +44,8 @@ export default function Header() {
       <div style={{ maxWidth:1200, margin:"0 auto", padding:"0 22px", height:58, display:"flex", alignItems:"center", justifyContent:"space-between" }}>
 
         {/* Logo */}
-        <Link href="/" style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none" }}>
-          <CrenosoftLogo size={34} />
-          <span style={{ fontSize:17, fontWeight:700, color:"#1d1d1f", letterSpacing:-0.5 }}>crenosoft</span>
+        <Link href="/" style={{ display:"flex", alignItems:"center", textDecoration:"none" }}>
+          <CrenosoftLogo />
         </Link>
 
         {/* Desktop nav */}
