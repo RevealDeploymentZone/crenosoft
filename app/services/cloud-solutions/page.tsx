@@ -33,9 +33,44 @@ const FAQS = [
   ["How long does a cloud migration take?","Assessment and architecture: 1–2 weeks. Implementation: 2–8 weeks depending on number of workloads, complexity, and whether refactoring is involved. Full migration with testing and cutover: typically 8–20 weeks for mid-sized systems. We give detailed timelines after the discovery phase."],
 ];
 
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(([q, a]) => ({
+    "@type": "Question",
+    name: q as string,
+    acceptedAnswer: { "@type": "Answer", text: a as string },
+  })),
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.crenosoft.in/services/cloud-solutions/#service",
+  name: "Cloud Solutions",
+  provider: { "@id": "https://www.crenosoft.in/#organization" },
+  areaServed: { "@type": "Country", name: "India" },
+  url: "https://www.crenosoft.in/services/cloud-solutions",
+  description: metadata.description as string,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home",     item: "https://www.crenosoft.in" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://www.crenosoft.in/services" },
+    { "@type": "ListItem", position: 3, name: "Cloud Solutions",   item: "https://www.crenosoft.in/services/cloud-solutions" },
+  ],
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <style>{`
         .cp-card:hover{transform:translateY(-3px)!important;box-shadow:0 12px 32px rgba(0,0,0,.08)!important}
         @media(max-width:900px){.cap-grid{grid-template-columns:repeat(2,1fr)!important}}
