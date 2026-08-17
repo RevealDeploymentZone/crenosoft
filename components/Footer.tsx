@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="footer-brand">
             <Link href="/" style={{ display:"flex", alignItems:"center", textDecoration:"none", marginBottom:16 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/crenosoft-logo.png" height={40} alt="Crenosoft" style={{ display:"block", width:"auto" }} />
+              <img src="/crenosoft-logo.png" alt="Crenosoft" style={{ height:"28px", width:"auto", display:"block" }} />
             </Link>
             <p style={{ fontSize:14, color:"#6e6e73", lineHeight:1.7, maxWidth:260, marginBottom:24 }}>
               AI-first software development company in India. We build intelligent products that help businesses grow faster and operate smarter.
