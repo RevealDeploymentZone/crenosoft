@@ -379,7 +379,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     "react-native-vs-flutter": "2025-07-05",
     "cloud-cost-optimisation": "2025-07-01",
   };
-
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -387,37 +386,19 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     description: post.excerpt,
     datePublished: dateMap[slug] ?? "2025-08-01",
     dateModified: dateMap[slug] ?? "2025-08-01",
-    author: {
-      "@type": "Organization",
-      "@id": "https://www.crenosoft.in/#organization",
-      name: "Crenosoft",
-      url: "https://www.crenosoft.in",
-    },
-    publisher: {
-      "@type": "Organization",
-      "@id": "https://www.crenosoft.in/#organization",
-      name: "Crenosoft",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.crenosoft.in/logo.png",
-      },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://www.crenosoft.in/blog/${slug}`,
-    },
+    author: { "@type": "Organization", "@id": "https://www.crenosoft.in/#organization", name: "Crenosoft", url: "https://www.crenosoft.in" },
+    publisher: { "@type": "Organization", "@id": "https://www.crenosoft.in/#organization", name: "Crenosoft", logo: { "@type": "ImageObject", url: "https://www.crenosoft.in/logo.png" } },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://www.crenosoft.in/blog/${slug}` },
     url: `https://www.crenosoft.in/blog/${slug}`,
     image: "https://www.crenosoft.in/og-image.png",
     inLanguage: "en-IN",
-    isPartOf: { "@id": "https://www.crenosoft.in/#website" },
   };
-
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home",  item: "https://www.crenosoft.in" },
-      { "@type": "ListItem", position: 2, name: "Blog",  item: "https://www.crenosoft.in/blog" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.crenosoft.in" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.crenosoft.in/blog" },
       { "@type": "ListItem", position: 3, name: post.title, item: `https://www.crenosoft.in/blog/${slug}` },
     ],
   };
@@ -428,7 +409,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-    <div style={{ minHeight: "100vh", background: "#fff", paddingTop: 96, paddingBottom: 80 }}>
+      <div style={{ minHeight: "100vh", background: "#fff", paddingTop: 96, paddingBottom: 80 }}>
 
       {/* Header */}
       <div style={{ background: "#f5f5f7", borderBottom: "1px solid #e5e5ea", padding: "48px 24px 40px" }}>
@@ -508,5 +489,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
       </div>
     </div>
+    </>
   );
 }
+
