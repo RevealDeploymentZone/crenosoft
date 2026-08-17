@@ -42,7 +42,7 @@ export default function Footer() {
               AI-first software development company in India. We build intelligent products that help businesses grow faster and operate smarter.
             </p>
             <div style={{ display:"flex", gap:20 }}>
-              {[["LinkedIn","https://linkedin.com/company/crenosoft"],["Twitter","https://twitter.com/crenosoft"],["GitHub","https://github.com/crenosoft"]].map(([l,h])=>(
+              {[["LinkedIn","https://linkedin.com/company/crenosoft"]].map(([l,h])=>(
                 <a key={l} href={h} target="_blank" rel="noopener noreferrer" className="fl" style={{ fontSize:13, color:"#86868b", textDecoration:"none" }}>
                   {l}
                 </a>
