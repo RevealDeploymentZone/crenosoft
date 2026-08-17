@@ -366,8 +366,68 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   }
 
   const toc = post.blocks.filter((b): b is { t: "h2"; text: string } => b.t === "h2");
+  // ── Structured Data ───────────────────────────────────────────────────────
+  const dateMap: Record<string, string> = {
+    "ai-automation-india-2025": "2025-08-10",
+    "custom-ai-software-development-india-2025": "2025-08-16",
+    "ui-ux-design-trends-2025-india": "2025-08-16",
+    "cloud-migration-guide-indian-startups-2025": "2025-08-16",
+    "building-ai-powered-saas-india-2025": "2025-08-16",
+    "llm-integration-guide": "2025-07-28",
+    "nextjs-seo-2025": "2025-07-15",
+    "ai-agent-basics": "2025-07-10",
+    "react-native-vs-flutter": "2025-07-05",
+    "cloud-cost-optimisation": "2025-07-01",
+  };
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: dateMap[slug] ?? "2025-08-01",
+    dateModified: dateMap[slug] ?? "2025-08-01",
+    author: {
+      "@type": "Organization",
+      "@id": "https://www.crenosoft.in/#organization",
+      name: "Crenosoft",
+      url: "https://www.crenosoft.in",
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": "https://www.crenosoft.in/#organization",
+      name: "Crenosoft",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.crenosoft.in/logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.crenosoft.in/blog/${slug}`,
+    },
+    url: `https://www.crenosoft.in/blog/${slug}`,
+    image: "https://www.crenosoft.in/og-image.png",
+    inLanguage: "en-IN",
+    isPartOf: { "@id": "https://www.crenosoft.in/#website" },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home",  item: "https://www.crenosoft.in" },
+      { "@type": "ListItem", position: 2, name: "Blog",  item: "https://www.crenosoft.in/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://www.crenosoft.in/blog/${slug}` },
+    ],
+  };
+
+
 
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div style={{ minHeight: "100vh", background: "#fff", paddingTop: 96, paddingBottom: 80 }}>
 
       {/* Header */}
