@@ -23,7 +23,7 @@ const NAV_INDUSTRIES = [
 function CrenosoftLogo({ size = 32 }: { size?: number }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src="/crenosoft-logo.jpeg" width={size} height={size} alt="Crenosoft" style={{ borderRadius:"50%", objectFit:"cover" }} />
+    <img src="/crenosoft-logo.png" width={size} height={size} alt="Crenosoft" style={{ borderRadius:"50%", objectFit:"cover" }} />
   );
 }
 
