@@ -12,14 +12,20 @@ export default function ContactPage() {
   return (
     <>
       <style>{`
-        .form-input { width:100%; padding:12px 14px; border:1.5px solid #e5e5e7; border-radius:10px; font-size:14px; color:#111; font-family:inherit; outline:none; transition:border-color 0.2s; background:white; }
+        .form-input { width:100%; padding:12px 14px; border:1.5px solid #e5e5e7; border-radius:10px; font-size:14px; color:#111; font-family:inherit; outline:none; transition:border-color 0.2s; background:white; box-sizing:border-box; }
         .form-input:focus { border-color:#3d3d3d; }
         .contact-icon-box { width:44px; height:44px; border-radius:12px; background:#f0f0ff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
         .reason-card { background:#f5f5f7; border-radius:16px; padding:20px; border:1px solid rgba(0,0,0,0.05); text-align:center; }
+        @media(max-width:767px){
+          .contact-hero{padding-top:96px!important;padding-bottom:40px!important}
+          .contact-grid{grid-template-columns:1fr!important;gap:40px!important}
+          .name-grid{grid-template-columns:1fr!important}
+          .contact-sec{padding:40px 20px!important}
+        }
       `}</style>
 
       {/* Hero */}
-      <section style={{ background:"white", paddingTop:120, paddingBottom:64, paddingLeft:24, paddingRight:24, borderBottom:"1px solid #f0f0f0" }}>
+      <section className="contact-hero" style={{ background:"white", paddingTop:120, paddingBottom:64, paddingLeft:24, paddingRight:24, borderBottom:"1px solid #f0f0f0" }}>
         <div style={{ maxWidth:640, margin:"0 auto", textAlign:"center" }}>
           <p style={{ fontSize:12, fontWeight:700, color:"#3d3d3d", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:16 }}>Get In Touch</p>
           <h1 style={{ fontSize:"clamp(32px,5vw,56px)", fontWeight:700, color:"#111", letterSpacing:-1.5, lineHeight:1.1, marginBottom:16 }}>
@@ -51,14 +57,14 @@ export default function ContactPage() {
       </section>
 
       {/* Form + Info */}
-      <section style={{ background:"white", padding:"64px 24px" }}>
-        <div style={{ maxWidth:1000, margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:64, alignItems:"start" }}>
+      <section className="contact-sec" style={{ background:"white", padding:"64px 24px" }}>
+        <div className="contact-grid" style={{ maxWidth:1000, margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:64, alignItems:"start" }}>
 
           {/* Form */}
           <div>
             <h2 style={{ fontSize:24, fontWeight:700, color:"#111", marginBottom:28, letterSpacing:-0.5 }}>Send us a message</h2>
             <form style={{ display:"flex", flexDirection:"column", gap:16 }}>
-              <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
+              <div className="name-grid" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
                 <div>
                   <label style={{ display:"block", fontSize:13, fontWeight:600, color:"#444", marginBottom:6 }}>First name</label>
                   <input type="text" placeholder="Rahul" className="form-input" />
