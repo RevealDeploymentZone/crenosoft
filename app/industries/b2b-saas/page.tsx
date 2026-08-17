@@ -33,9 +33,31 @@ const FAQS = [
   ["What does B2B SaaS development cost in India?","SaaS MVP (core workflow + billing + web): ₹15–30 lakhs. Full product with mobile app + API: ₹25–55 lakhs. Enterprise feature set (SSO, audit logs, RBAC): ₹8–18 lakhs additional. AI features integrated into product: ₹8–20 lakhs depending on complexity. Infrastructure setup + CI/CD: ₹2–5 lakhs. All prices exclude GST and third-party service costs."],
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(([q, a]) => ({
+    "@type": "Question",
+    name: q as string,
+    acceptedAnswer: { "@type": "Answer", text: a as string },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home",       item: "https://www.crenosoft.in" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://www.crenosoft.in/industries" },
+    { "@type": "ListItem", position: 3, name: "B2B SaaS",     item: "https://www.crenosoft.in/industries/b2b-saas" },
+  ],
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <style>{`
         .cap-card:hover{transform:translateY(-3px)!important;box-shadow:0 12px 32px rgba(0,0,0,.08)!important}
         @media(max-width:900px){.cap-grid{grid-template-columns:repeat(2,1fr)!important}}
