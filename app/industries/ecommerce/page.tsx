@@ -33,9 +33,31 @@ const FAQS = [
   ["What does e-commerce development cost in India?","Custom storefront (headless): ₹10–25 lakhs. Full D2C platform with payment + inventory + logistics: ₹20–45 lakhs. Multi-vendor marketplace: ₹35–80 lakhs. WhatsApp commerce integration: ₹4–8 lakhs. AI recommendation engine: ₹8–18 lakhs. All prices exclude GST and third-party API costs."],
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(([q, a]) => ({
+    "@type": "Question",
+    name: q as string,
+    acceptedAnswer: { "@type": "Answer", text: a as string },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home",       item: "https://www.crenosoft.in" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://www.crenosoft.in/industries" },
+    { "@type": "ListItem", position: 3, name: "E-commerce & D2C",     item: "https://www.crenosoft.in/industries/ecommerce" },
+  ],
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <style>{`
         .cap-card:hover{transform:translateY(-3px)!important;box-shadow:0 12px 32px rgba(0,0,0,.08)!important}
         @media(max-width:900px){.cap-grid{grid-template-columns:repeat(2,1fr)!important}}
