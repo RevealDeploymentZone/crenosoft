@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import StatsSlider from "@/components/StatsSlider";
 
 export const metadata: Metadata = {
   title: "Crenosoft — AI Software Development & Automation Company in India",
@@ -57,10 +58,9 @@ export default function Home() {
         .cta-btn:hover{opacity:.82}
         .cta-ghost:hover{background:#e5e5ea!important}
         .blog-link:hover{background:#f0f0f0!important}
-        @media(max-width:900px){.stat-row{grid-template-columns:repeat(2,1fr)!important}.testi-row{grid-template-columns:1fr!important}.why-grid{grid-template-columns:1fr!important}.ind-grid{grid-template-columns:1fr 1fr!important}.blog-grid{grid-template-columns:1fr 1fr!important}}
+        @media(max-width:900px){.testi-row{grid-template-columns:1fr!important}.why-grid{grid-template-columns:1fr!important}.ind-grid{grid-template-columns:1fr 1fr!important}.blog-grid{grid-template-columns:1fr 1fr!important}}
         @media(max-width:700px){.svc-grid{grid-template-columns:1fr!important}.hero-btns{flex-direction:column!important;align-items:stretch!important}.ind-grid{grid-template-columns:1fr!important}.blog-grid{grid-template-columns:1fr!important}}
         @media(max-width:767px){.sec-pad{padding-top:52px!important;padding-bottom:52px!important}.sec-pad-sm{padding-top:40px!important;padding-bottom:40px!important}}
-        @media(max-width:767px){.stat-row{display:flex!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;-webkit-overflow-scrolling:touch!important;gap:0!important;padding:32px 20px!important;margin:0 -20px!important;scrollbar-width:none!important}.stat-row::-webkit-scrollbar{display:none!important}.stat-row>div{flex:0 0 55vw!important;scroll-snap-align:center!important;border-right:1px solid #d2d2d7!important;padding:0 16px!important;text-align:center!important}}
       `}</style>
 
       {/* HERO */}
@@ -91,14 +91,7 @@ export default function Home() {
 
       {/* STATS */}
       <section style={{ background:"#f5f5f7",borderBottom:"1px solid #e5e5ea" }}>
-        <div className="stat-row" style={{ maxWidth:900,margin:"0 auto",padding:"48px 24px",display:"grid",gridTemplateColumns:"repeat(4,1fr)" }}>
-          {STATS.map(([v,l],i)=>(
-            <div key={l} style={{ textAlign:"center",padding:"0 12px",borderRight:i<3?"1px solid #d2d2d7":"none" }}>
-              <div style={{ fontSize:"clamp(30px,4vw,44px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.04em",lineHeight:1 }}>{v}</div>
-              <div style={{ fontSize:13,color:"#86868b",marginTop:6,fontWeight:500 }}>{l}</div>
-            </div>
-          ))}
-        </div>
+        <StatsSlider />
       </section>
 
       {/* INTRO */}
