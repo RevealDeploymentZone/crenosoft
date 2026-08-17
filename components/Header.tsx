@@ -123,41 +123,54 @@ export default function Header() {
         </nav>
 
         {/* Mobile burger */}
-        <button onClick={()=>setMenuOpen(!menuOpen)} style={{ display:"none", background:"none", border:"none", cursor:"pointer", color:"#1d1d1f", padding:4 }} className="mob-btn">
+        <button onClick={()=>setMenuOpen(!menuOpen)} style={{ display:"none", background:"none", border:"none", outline:"none", cursor:"pointer", color:"#1d1d1f", padding:6 }} className="mob-btn">
           {menuOpen
-            ? <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 14M18 4L4 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
-            : <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
+            ? <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
+            : <svg width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M0 1h22M0 8h22M0 15h22" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
           }
         </button>
       </div>
 
       {menuOpen && (
-        <div style={{ background:"#fff", borderTop:"1px solid #f0f0f0", padding:"16px 22px 24px" }}>
-          <p style={{ fontSize:11, fontWeight:700, color:"#86868b", letterSpacing:"0.08em", textTransform:"uppercase", marginBottom:10 }}>Services</p>
-          {NAV_SERVICES.map(s=>(
-            <Link key={s.href} href={s.href} onClick={()=>setMenuOpen(false)}
-              style={{ display:"block", padding:"11px 0", color:"#1d1d1f", fontSize:15, fontWeight:500, borderBottom:"1px solid #f5f5f5", textDecoration:"none" }}>
-              {s.name}
-            </Link>
-          ))}
-          <p style={{ fontSize:11, fontWeight:700, color:"#86868b", letterSpacing:"0.08em", textTransform:"uppercase", marginBottom:10, marginTop:16 }}>Industries</p>
-          {NAV_INDUSTRIES.map(s=>(
-            <Link key={s.href} href={s.href} onClick={()=>setMenuOpen(false)}
-              style={{ display:"block", padding:"11px 0", color:"#1d1d1f", fontSize:15, fontWeight:500, borderBottom:"1px solid #f5f5f5", textDecoration:"none" }}>
-              {s.name}
-            </Link>
-          ))}
-          <div style={{ marginTop:8 }}>
-            {["About","Blog","Contact"].map(l=>(
-              <Link key={l} href={`/${l.toLowerCase()}`} onClick={()=>setMenuOpen(false)}
-                style={{ display:"block", padding:"11px 0", color:"#1d1d1f", fontSize:15, fontWeight:500, borderBottom:"1px solid #f5f5f5", textDecoration:"none" }}>
-                {l}
+        <div style={{ background:"#fff", borderTop:"1px solid #f0f0f0", padding:"20px 20px 28px", maxHeight:"80vh", overflowY:"auto" }}>
+
+          {/* Quick links */}
+          <div style={{ display:"flex", gap:8, marginBottom:20 }}>
+            {[{l:"About",h:"/about"},{l:"Blog",h:"/blog"},{l:"Contact",h:"/contact"}].map(n=>(
+              <Link key={n.h} href={n.h} onClick={()=>setMenuOpen(false)}
+                style={{ flex:1, textAlign:"center", padding:"8px 0", background:"#f5f5f7", borderRadius:10, fontSize:13, fontWeight:500, color:"#1d1d1f", textDecoration:"none" }}>
+                {n.l}
               </Link>
             ))}
           </div>
+
+          {/* Services */}
+          <p style={{ fontSize:11, fontWeight:700, color:"#86868b", letterSpacing:"0.08em", textTransform:"uppercase", marginBottom:8 }}>Services</p>
+          <div style={{ background:"#f5f5f7", borderRadius:14, overflow:"hidden", marginBottom:16 }}>
+            {NAV_SERVICES.map((s, i)=>(
+              <Link key={s.href} href={s.href} onClick={()=>setMenuOpen(false)}
+                style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 16px", color:"#1d1d1f", fontSize:14, fontWeight:500, borderBottom: i < NAV_SERVICES.length-1 ? "1px solid #e5e5ea" : "none", textDecoration:"none", background:"transparent" }}>
+                <span>{s.name}</span>
+                <span style={{ color:"#86868b", fontSize:12 }}>›</span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Industries */}
+          <p style={{ fontSize:11, fontWeight:700, color:"#86868b", letterSpacing:"0.08em", textTransform:"uppercase", marginBottom:8 }}>Industries</p>
+          <div style={{ background:"#f5f5f7", borderRadius:14, overflow:"hidden", marginBottom:20 }}>
+            {NAV_INDUSTRIES.map((s, i)=>(
+              <Link key={s.href} href={s.href} onClick={()=>setMenuOpen(false)}
+                style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 16px", color:"#1d1d1f", fontSize:14, fontWeight:500, borderBottom: i < NAV_INDUSTRIES.length-1 ? "1px solid #e5e5ea" : "none", textDecoration:"none", background:"transparent" }}>
+                <span>{s.name}</span>
+                <span style={{ color:"#86868b", fontSize:12 }}>›</span>
+              </Link>
+            ))}
+          </div>
+
           <Link href="/contact" onClick={()=>setMenuOpen(false)}
-            style={{ display:"block", marginTop:16, background:"#1d1d1f", color:"#fff", padding:14, borderRadius:12, textAlign:"center", fontSize:15, fontWeight:600, textDecoration:"none" }}>
-            Get Started
+            style={{ display:"block", background:"#1d1d1f", color:"#fff", padding:"14px", borderRadius:14, textAlign:"center", fontSize:15, fontWeight:600, textDecoration:"none" }}>
+            Get Started →
           </Link>
         </div>
       )}
