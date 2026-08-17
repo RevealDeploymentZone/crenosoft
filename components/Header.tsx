@@ -23,7 +23,7 @@ const NAV_INDUSTRIES = [
 function CrenosoftLogo() {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src="/crenosoft-logo.png" alt="Crenosoft" style={{ height:"36px", width:"auto", display:"block" }} />
+    <img src="/crenosoft-logo.png" alt="Crenosoft" style={{ height:"28px", width:"auto", display:"block" }} />
   );
 }
 
