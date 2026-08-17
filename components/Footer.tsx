@@ -31,7 +31,7 @@ export default function Footer() {
           <div>
             <Link href="/" style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none", marginBottom:16 }}>
               // eslint-disable-next-line @next/next/no-img-element
-              <img src="/crenosoft-logo.jpeg" width="32" height="32" alt="Crenosoft" style={{ borderRadius:"50%", objectFit:"cover" }} />
+              <img src="/crenosoft-logo.png" width="32" height="32" alt="Crenosoft" style={{ borderRadius:"50%", objectFit:"cover" }} />
               <span style={{ fontSize:18, fontWeight:700, color:"#1d1d1f", letterSpacing:-0.5 }}>crenosoft</span>
             </Link>
             <p style={{ fontSize:14, color:"#6e6e73", lineHeight:1.7, maxWidth:260, marginBottom:24 }}>
