@@ -115,7 +115,7 @@ export default function Home() {
 
       {/* SERVICES */}
       <section className="sec-pad" style={{ background:"#f5f5f7",padding:"96px 24px" }}>
-        <div style={{ maxWidth:1160,margin:"0 auto" }}>
+        <div style={{ maxWidth:1400,margin:"0 auto" }}>
           <div style={{ textAlign:"center",marginBottom:64 }}>
             <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>What We Build</p>
             <h2 style={{ fontSize:"clamp(32px,5vw,56px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.04em",lineHeight:1.06,marginBottom:16 }}>Services Built for the AI Era</h2>
@@ -144,7 +144,7 @@ export default function Home() {
 
       {/* WHY CRENOSOFT */}
       <section className="sec-pad" style={{ background:"#fff",padding:"96px 24px" }}>
-        <div style={{ maxWidth:1160,margin:"0 auto" }}>
+        <div style={{ maxWidth:1400,margin:"0 auto" }}>
           <div style={{ textAlign:"center",marginBottom:56 }}>
             <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>Why Crenosoft</p>
             <h2 style={{ fontSize:"clamp(28px,4vw,48px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.04em",lineHeight:1.1,marginBottom:16 }}>What makes working with us different</h2>
@@ -164,7 +164,7 @@ export default function Home() {
 
       {/* INDUSTRIES */}
       <section className="sec-pad-sm" style={{ background:"#f5f5f7",padding:"80px 24px" }}>
-        <div style={{ maxWidth:1160,margin:"0 auto" }}>
+        <div style={{ maxWidth:1400,margin:"0 auto" }}>
           <div style={{ textAlign:"center",marginBottom:52 }}>
             <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>Industries</p>
             <h2 style={{ fontSize:"clamp(26px,3.5vw,44px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.04em",lineHeight:1.1 }}>Industries We Work With</h2>
@@ -182,7 +182,7 @@ export default function Home() {
 
       {/* TESTIMONIALS */}
       <section className="sec-pad" style={{ background:"#fff",padding:"96px 24px" }}>
-        <div style={{ maxWidth:1160,margin:"0 auto" }}>
+        <div style={{ maxWidth:1400,margin:"0 auto" }}>
           <div style={{ textAlign:"center",marginBottom:56 }}>
             <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>Client Stories</p>
             <h2 style={{ fontSize:"clamp(28px,4vw,48px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.04em" }}>What our clients say</h2>
@@ -202,7 +202,7 @@ export default function Home() {
 
       {/* BLOG RESOURCES */}
       <section className="sec-pad-sm" style={{ background:"#f5f5f7",padding:"80px 24px",borderTop:"1px solid #e5e5ea" }}>
-        <div style={{ maxWidth:1160,margin:"0 auto" }}>
+        <div style={{ maxWidth:1400,margin:"0 auto" }}>
           <div style={{ textAlign:"center",marginBottom:48 }}>
             <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>Resources</p>
             <h2 style={{ fontSize:"clamp(24px,3.5vw,40px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.035em",marginBottom:12 }}>Guides for Builders</h2>

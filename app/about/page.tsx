@@ -75,7 +75,7 @@ export default function AboutPage() {
 
       {/* Mission */}
       <section className="about-sec" style={{ background:"#f5f5f7", padding:"80px 24px" }}>
-        <div className="mission-grid" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:64, alignItems:"center" }}>
+        <div className="mission-grid" style={{ maxWidth:1350, margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:64, alignItems:"center" }}>
           <div>
             <p style={{ fontSize:12, fontWeight:700, color:"#3d3d3d", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:14 }}>Our Mission</p>
             <h2 style={{ fontSize:"clamp(24px,3.5vw,40px)", fontWeight:700, color:"#111", letterSpacing:-1, lineHeight:1.2, marginBottom:20 }}>
@@ -111,7 +111,7 @@ export default function AboutPage() {
 
       {/* Values */}
       <section style={{ background:"white", padding:"80px 24px" }}>
-        <div style={{ maxWidth:1100, margin:"0 auto" }}>
+        <div style={{ maxWidth:1350, margin:"0 auto" }}>
           <div style={{ textAlign:"center", marginBottom:52 }}>
             <p style={{ fontSize:12, fontWeight:700, color:"#3d3d3d", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:12 }}>What Drives Us</p>
             <h2 style={{ fontSize:"clamp(26px,3.5vw,44px)", fontWeight:700, color:"#111", letterSpacing:-1.2 }}>Our values</h2>
@@ -135,7 +135,7 @@ export default function AboutPage() {
 
       {/* Team */}
       <section style={{ background:"#f5f5f7", padding:"80px 24px" }} id="team">
-        <div style={{ maxWidth:1100, margin:"0 auto" }}>
+        <div style={{ maxWidth:1350, margin:"0 auto" }}>
           <div style={{ textAlign:"center", marginBottom:52 }}>
             <p style={{ fontSize:12, fontWeight:700, color:"#3d3d3d", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:12 }}>The People</p>
             <h2 style={{ fontSize:"clamp(26px,3.5vw,44px)", fontWeight:700, color:"#111", letterSpacing:-1.2 }}>Meet the core team</h2>

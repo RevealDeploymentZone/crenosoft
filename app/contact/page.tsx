@@ -35,7 +35,7 @@ export default function ContactPage() {
 
       {/* Reason cards */}
       <section style={{ background:"#f5f5f7", padding:"40px 24px" }}>
-        <div style={{ maxWidth:900, margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))", gap:14 }}>
+        <div style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))", gap:14 }}>
           {[
             { icon: Briefcase, title: "Start a project", desc: "Have a product idea or business challenge?" },
             { icon: MessageSquare, title: "General enquiry", desc: "Questions about services, process, or pricing?" },
@@ -54,7 +54,7 @@ export default function ContactPage() {
 
       {/* Form + Info */}
       <section className="contact-sec" style={{ background:"white", padding:"64px 24px" }}>
-        <div className="contact-grid" style={{ maxWidth:1000, margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:64, alignItems:"start" }}>
+        <div className="contact-grid" style={{ maxWidth:1200, margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:64, alignItems:"start" }}>
 
           {/* Form */}
           <div>
