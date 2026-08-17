@@ -45,10 +45,16 @@ export default function AboutPage() {
         .tm-card { background:#f5f5f7; border-radius:20px; padding:28px; border:1px solid rgba(0,0,0,0.05); transition:transform 0.3s,box-shadow 0.3s; }
         .tm-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,0.08); }
         .val-card { background:white; border-radius:20px; padding:28px; border:1px solid rgba(0,0,0,0.07); text-align:center; }
+        @media(max-width:767px){
+          .mission-grid{grid-template-columns:1fr!important;gap:32px!important}
+          .about-hero{padding-top:96px!important;padding-bottom:48px!important}
+          .about-sec{padding-top:48px!important;padding-bottom:48px!important}
+          .about-stats{gap:20px!important}
+        }
       `}</style>
 
       {/* Hero — white with subtle top padding */}
-      <section style={{ background:"white", paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, borderBottom:"1px solid #f0f0f0" }}>
+      <section className="about-hero" style={{ background:"white", paddingTop:120, paddingBottom:80, paddingLeft:24, paddingRight:24, borderBottom:"1px solid #f0f0f0" }}>
         <div style={{ maxWidth:760, margin:"0 auto", textAlign:"center" }}>
           <p style={{ fontSize:12, fontWeight:700, color:"#3d3d3d", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:16 }}>About Us</p>
           <h1 style={{ fontSize:"clamp(36px,6vw,64px)", fontWeight:700, letterSpacing:-2, lineHeight:1.08, color:"#111", marginBottom:20 }}>
@@ -64,8 +70,8 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section style={{ background:"#f5f5f7", padding:"80px 24px" }}>
-        <div style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:64, alignItems:"center" }}>
+      <section className="about-sec" style={{ background:"#f5f5f7", padding:"80px 24px" }}>
+        <div className="mission-grid" style={{ maxWidth:1100, margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:64, alignItems:"center" }}>
           <div>
             <p style={{ fontSize:12, fontWeight:700, color:"#3d3d3d", letterSpacing:"0.1em", textTransform:"uppercase", marginBottom:14 }}>Our Mission</p>
             <h2 style={{ fontSize:"clamp(24px,3.5vw,40px)", fontWeight:700, color:"#111", letterSpacing:-1, lineHeight:1.2, marginBottom:20 }}>
@@ -77,7 +83,7 @@ export default function AboutPage() {
             <p style={{ fontSize:15, color:"#555", lineHeight:1.75, marginBottom:32 }}>
               From a growing e-commerce brand in Chennai to a fintech startup in Bangalore — every business deserves technology that gives them a genuine advantage.
             </p>
-            <div style={{ display:"flex", gap:32 }}>
+            <div className="about-stats" style={{ display:"flex", gap:32, flexWrap:"wrap" }}>
               {[{ v:"150+", l:"Projects" }, { v:"20+", l:"Team members" }, { v:"4+", l:"Countries" }].map((s) => (
                 <div key={s.l}>
                   <div style={{ fontSize:32, fontWeight:700, color:"#3d3d3d", letterSpacing:-1 }}>{s.v}</div>
