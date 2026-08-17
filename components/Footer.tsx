@@ -80,21 +80,23 @@ export default function Footer() {
                 Get a Free Quote
               </Link>
             </div>
-            <div style={{ marginTop:20, borderRadius:12, overflow:"hidden", border:"1px solid #d2d2d7" }}>
-              <iframe
-                src="https://maps.google.com/maps?q=Crenosoft+551+KA+A154B+Azad+Nagar+Alambagh+Lucknow+226005&output=embed&z=15"
-                width="100%"
-                height="160"
-                style={{ border:0, display:"block" }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Crenosoft Location"
-              />
-            </div>
+
           </div>
         </div>
 
-        <div style={{ marginTop:48, paddingTop:24, paddingBottom:32, borderTop:"1px solid #d2d2d7", display:"flex", justifyContent:"space-between", flexWrap:"wrap", gap:12, fontSize:13, color:"#86868b" }}>
+        <div style={{ marginTop:40, borderRadius:16, overflow:"hidden", border:"1px solid #d2d2d7" }}>
+          <iframe
+            src="https://maps.google.com/maps?q=Crenosoft+551+KA+A154B+Azad+Nagar+Alambagh+Lucknow+226005&output=embed&z=15"
+            width="100%"
+            height="200"
+            style={{ border:0, display:"block" }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Crenosoft Office Location"
+          />
+        </div>
+
+        <div style={{ marginTop:24, paddingTop:24, paddingBottom:32, borderTop:"1px solid #d2d2d7", display:"flex", justifyContent:"space-between", flexWrap:"wrap", gap:12, fontSize:13, color:"#86868b" }}>
           <span>Copyright &copy; {new Date().getFullYear()} Crenosoft. All rights reserved.</span>
           <div style={{ display:"flex", gap:20 }}>
             <Link href="/privacy" style={{ color:"#86868b", textDecoration:"none" }}>Privacy Policy</Link>
