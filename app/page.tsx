@@ -60,6 +60,7 @@ export default function Home() {
         @media(max-width:900px){.stat-row{grid-template-columns:repeat(2,1fr)!important}.testi-row{grid-template-columns:1fr!important}.why-grid{grid-template-columns:1fr!important}.ind-grid{grid-template-columns:1fr 1fr!important}.blog-grid{grid-template-columns:1fr 1fr!important}}
         @media(max-width:700px){.svc-grid{grid-template-columns:1fr!important}.hero-btns{flex-direction:column!important;align-items:stretch!important}.ind-grid{grid-template-columns:1fr!important}.blog-grid{grid-template-columns:1fr!important}}
         @media(max-width:767px){.sec-pad{padding-top:52px!important;padding-bottom:52px!important}.sec-pad-sm{padding-top:40px!important;padding-bottom:40px!important}}
+        @media(max-width:767px){.stat-row{display:flex!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;-webkit-overflow-scrolling:touch!important;gap:0!important;padding:32px 20px!important;margin:0 -20px!important;scrollbar-width:none!important}.stat-row::-webkit-scrollbar{display:none!important}.stat-row>div{flex:0 0 55vw!important;scroll-snap-align:center!important;border-right:1px solid #d2d2d7!important;padding:0 16px!important;text-align:center!important}}
       `}</style>
 
       {/* HERO */}
