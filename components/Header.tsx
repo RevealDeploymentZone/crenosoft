@@ -22,13 +22,8 @@ const NAV_INDUSTRIES = [
 
 function CrenosoftLogo({ size = 32 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="50" fill="#F07336"/>
-      {/* C-shape cutout on right */}
-      <path d="M78 32 Q64 36 64 50 Q64 64 78 68 Q88 63 90 54 L83 51 Q82 58 76 61 Q66 61 66 50 Q66 39 76 39 Q82 42 83 49 L90 46 Q88 37 78 32Z" fill="white"/>
-      {/* 8-pointed star */}
-      <path d="M50 24 L53.5 44 L70 32 L58 48 L78 50 L58 52 L70 68 L53.5 56 L50 76 L46.5 56 L30 68 L42 52 L22 50 L42 48 L30 32 L46.5 44 Z" fill="white"/>
-    </svg>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/crenosoft-logo.jpeg" width={size} height={size} alt="Crenosoft" style={{ borderRadius:"50%", objectFit:"cover" }} />
   );
 }
 
