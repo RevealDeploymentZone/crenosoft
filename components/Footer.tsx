@@ -26,13 +26,14 @@ export default function Footer() {
     <footer style={{ background:"#f5f5f7", borderTop:"1px solid #d2d2d7" }}>
       <style>{`
         .fl:hover{color:#3d3d3d!important}
-        @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr!important;gap:32px!important}}
-        @media(max-width:560px){.footer-grid{grid-template-columns:1fr!important;gap:28px!important}}
+        .footer-brand{flex:0 0 260px;min-width:200px}
+        .footer-col{flex:1 1 140px;min-width:130px}
+        @media(max-width:600px){.footer-brand{flex:0 0 100%}.footer-col{flex:0 0 calc(50% - 12px)}}
       `}</style>
       <div style={{ maxWidth:1200, margin:"0 auto", padding:"64px 24px 0" }}>
-        <div className="footer-grid" style={{ display:"grid", gridTemplateColumns:"1.6fr 1fr 1fr 1fr 1.2fr", gap:40 }}>
+        <div style={{ display:"flex", flexWrap:"wrap", gap:32 }}>
 
-          <div>
+          <div className="footer-brand">
             <Link href="/" style={{ display:"flex", alignItems:"center", textDecoration:"none", marginBottom:16 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/crenosoft-logo.png" height={40} alt="Crenosoft" style={{ display:"block", width:"auto" }} />
@@ -49,22 +50,22 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="footer-col">
             <p style={FH}>Services</p>
             {SERVICES.map(([n,h])=><Link key={h} href={h} className="fl" style={FL}>{n}</Link>)}
           </div>
 
-          <div>
+          <div className="footer-col">
             <p style={FH}>Industries</p>
             {INDUSTRIES.map(([n,h])=><Link key={h} href={h} className="fl" style={FL}>{n}</Link>)}
           </div>
 
-          <div>
+          <div className="footer-col">
             <p style={FH}>Company</p>
             {COMPANY.map(([n,h])=><Link key={h} href={h} className="fl" style={FL}>{n}</Link>)}
           </div>
 
-          <div>
+          <div className="footer-col">
             <p style={FH}>Contact</p>
             <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
               <a href="mailto:hello@crenosoft.in" style={{ fontSize:13, color:"#6e6e73", textDecoration:"none" }}>hello@crenosoft.in</a>
