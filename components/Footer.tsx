@@ -80,6 +80,17 @@ export default function Footer() {
                 Get a Free Quote
               </Link>
             </div>
+            <div style={{ marginTop:20, borderRadius:12, overflow:"hidden", border:"1px solid #d2d2d7" }}>
+              <iframe
+                src="https://maps.google.com/maps?q=Crenosoft+551+KA+A154B+Azad+Nagar+Alambagh+Lucknow+226005&output=embed&z=15"
+                width="100%"
+                height="160"
+                style={{ border:0, display:"block" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Crenosoft Location"
+              />
+            </div>
           </div>
         </div>
 
