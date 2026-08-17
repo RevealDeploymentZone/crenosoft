@@ -33,9 +33,31 @@ const FAQS = [
   ["What does healthcare software development cost in India?","Telemedicine platform MVP: ₹12–25 lakhs. Patient management system: ₹15–35 lakhs. Diagnostic AI model: ₹18–40 lakhs. ABDM integration module: ₹4–8 lakhs. Full hospital information system: ₹40–100 lakhs+. These are starting ranges — actual cost depends on integration count, regulatory requirements, and whether AI components are included."],
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(([q, a]) => ({
+    "@type": "Question",
+    name: q as string,
+    acceptedAnswer: { "@type": "Answer", text: a as string },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home",       item: "https://www.crenosoft.in" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://www.crenosoft.in/industries" },
+    { "@type": "ListItem", position: 3, name: "Healthcare",     item: "https://www.crenosoft.in/industries/healthcare" },
+  ],
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <style>{`
         .cap-card:hover{transform:translateY(-3px)!important;box-shadow:0 12px 32px rgba(0,0,0,.08)!important}
         @media(max-width:900px){.cap-grid{grid-template-columns:repeat(2,1fr)!important}}
