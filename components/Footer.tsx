@@ -24,9 +24,13 @@ const FH = { fontSize:12, fontWeight:700 as const, color:"#1d1d1f", letterSpacin
 export default function Footer() {
   return (
     <footer style={{ background:"#f5f5f7", borderTop:"1px solid #d2d2d7" }}>
-      <style>{`.fl:hover{color:#3d3d3d!important}`}</style>
+      <style>{`
+        .fl:hover{color:#3d3d3d!important}
+        @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr!important;gap:32px!important}}
+        @media(max-width:560px){.footer-grid{grid-template-columns:1fr!important;gap:28px!important}}
+      `}</style>
       <div style={{ maxWidth:1200, margin:"0 auto", padding:"64px 24px 0" }}>
-        <div style={{ display:"grid", gridTemplateColumns:"1.6fr 1fr 1fr 1fr 1.2fr", gap:40 }}>
+        <div className="footer-grid" style={{ display:"grid", gridTemplateColumns:"1.6fr 1fr 1fr 1fr 1.2fr", gap:40 }}>
 
           <div>
             <Link href="/" style={{ display:"flex", alignItems:"center", textDecoration:"none", marginBottom:16 }}>
