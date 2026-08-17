@@ -33,9 +33,31 @@ const FAQS = [
   ["What does EdTech software development cost in India?","LMS platform MVP: ₹10–22 lakhs. Live class platform: ₹14–28 lakhs. AI tutor integration: ₹8–18 lakhs. Mobile app (student + parent): ₹8–16 lakhs. Full EdTech platform: ₹30–70 lakhs. Adaptive assessment engine: ₹12–24 lakhs. Prices exclude GST and third-party infrastructure costs (video CDN, cloud hosting)."],
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(([q, a]) => ({
+    "@type": "Question",
+    name: q as string,
+    acceptedAnswer: { "@type": "Answer", text: a as string },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home",       item: "https://www.crenosoft.in" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://www.crenosoft.in/industries" },
+    { "@type": "ListItem", position: 3, name: "EdTech",     item: "https://www.crenosoft.in/industries/edtech" },
+  ],
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <style>{`
         .cap-card:hover{transform:translateY(-3px)!important;box-shadow:0 12px 32px rgba(0,0,0,.08)!important}
         @media(max-width:900px){.cap-grid{grid-template-columns:repeat(2,1fr)!important}}
