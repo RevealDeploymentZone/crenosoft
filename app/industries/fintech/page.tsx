@@ -33,9 +33,31 @@ const FAQS = [
   ["What does fintech software development cost in India?","UPI payment platform MVP: ₹15–30 lakhs. Digital lending platform: ₹20–50 lakhs. Fraud detection ML system: ₹12–25 lakhs. Wealth management platform: ₹18–40 lakhs. Regulatory reporting tool: ₹8–15 lakhs. These are starting ranges — actual cost depends on integration count, regulatory requirements, and performance targets."],
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(([q, a]) => ({
+    "@type": "Question",
+    name: q as string,
+    acceptedAnswer: { "@type": "Answer", text: a as string },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home",       item: "https://www.crenosoft.in" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://www.crenosoft.in/industries" },
+    { "@type": "ListItem", position: 3, name: "Fintech",     item: "https://www.crenosoft.in/industries/fintech" },
+  ],
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <style>{`
         .cap-card:hover{transform:translateY(-3px)!important;box-shadow:0 12px 32px rgba(0,0,0,.08)!important}
         @media(max-width:900px){.cap-grid{grid-template-columns:repeat(2,1fr)!important}}
