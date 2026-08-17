@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import { Mail, Phone, MapPin, Clock, ArrowRight, Briefcase, MessageSquare, HelpCircle } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Contact Crenosoft — Get a Free Consultation",
-  description: "Contact Crenosoft for a free consultation on AI software development, automation, web development, and more.",
-  alternates: { canonical: "https://www.crenosoft.in/contact" },
-};
+import { useState } from "react";
 
 export default function ContactPage() {
   return (
@@ -63,28 +59,59 @@ export default function ContactPage() {
           {/* Form */}
           <div>
             <h2 style={{ fontSize:24, fontWeight:700, color:"#111", marginBottom:28, letterSpacing:-0.5 }}>Send us a message</h2>
-            <form style={{ display:"flex", flexDirection:"column", gap:16 }}>
+            <form action="https://formsubmit.co/hello@crenosoft.in" method="POST" style={{ display:"flex", flexDirection:"column", gap:16 }}>
+              <input type="hidden" name="_subject" value="New Contact Form Submission from Crenosoft Website" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="text" name="_honey" style={{ display:"none" }} />
+
               <div className="name-grid" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
                 <div>
                   <label style={{ display:"block", fontSize:13, fontWeight:600, color:"#444", marginBottom:6 }}>First name</label>
-                  <input type="text" placeholder="Rahul" className="form-input" />
+                  <input
+                    type="text"
+                    name="First Name"
+                    placeholder="Rahul"
+                    className="form-input"
+                    required
+                  />
                 </div>
                 <div>
                   <label style={{ display:"block", fontSize:13, fontWeight:600, color:"#444", marginBottom:6 }}>Last name</label>
-                  <input type="text" placeholder="Sharma" className="form-input" />
+                  <input
+                    type="text"
+                    name="Last Name"
+                    placeholder="Sharma"
+                    className="form-input"
+                    required
+                  />
                 </div>
               </div>
               <div>
                 <label style={{ display:"block", fontSize:13, fontWeight:600, color:"#444", marginBottom:6 }}>Email address</label>
-                <input type="email" placeholder="rahul@company.com" className="form-input" />
+                <input
+                  type="email"
+                  name="Email"
+                  placeholder="rahul@company.com"
+                  className="form-input"
+                  required
+                />
               </div>
               <div>
                 <label style={{ display:"block", fontSize:13, fontWeight:600, color:"#444", marginBottom:6 }}>Phone (optional)</label>
-                <input type="tel" placeholder="+91 98765 43210" className="form-input" />
+                <input
+                  type="tel"
+                  name="Phone"
+                  placeholder="+91 98765 43210"
+                  className="form-input"
+                />
               </div>
               <div>
                 <label style={{ display:"block", fontSize:13, fontWeight:600, color:"#444", marginBottom:6 }}>Service you&apos;re interested in</label>
-                <select className="form-input">
+                <select
+                  name="Service Interested"
+                  className="form-input"
+                >
                   <option value="">Select a service</option>
                   <option>AI Software Development</option>
                   <option>AI Automation</option>
@@ -97,13 +124,34 @@ export default function ContactPage() {
               </div>
               <div>
                 <label style={{ display:"block", fontSize:13, fontWeight:600, color:"#444", marginBottom:6 }}>Tell us about your project</label>
-                <textarea rows={5} placeholder="Describe your project, challenge, or question..." className="form-input" style={{ resize:"none" }} />
+                <textarea
+                  name="Message"
+                  rows={5}
+                  placeholder="Describe your project, challenge, or question..."
+                  className="form-input"
+                  style={{ resize:"none" }}
+                  required
+                />
               </div>
-              <button type="submit" style={{
-                background:"#3d3d3d", color:"white", border:"none", padding:"14px", borderRadius:12,
-                fontSize:15, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8,
-                transition:"background 0.2s"
-              }}>
+
+              <button
+                type="submit"
+                style={{
+                  background:"#3d3d3d",
+                  color:"white",
+                  border:"none",
+                  padding:"14px",
+                  borderRadius:12,
+                  fontSize:15,
+                  fontWeight:600,
+                  cursor:"pointer",
+                  display:"flex",
+                  alignItems:"center",
+                  justifyContent:"center",
+                  gap:8,
+                  transition:"background 0.2s"
+                }}
+              >
                 Send Message <ArrowRight size={16} />
               </button>
               <p style={{ fontSize:12, color:"#aaa", textAlign:"center" }}>

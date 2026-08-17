@@ -47,9 +47,13 @@ export default function AboutPage() {
         .val-card { background:white; border-radius:20px; padding:28px; border:1px solid rgba(0,0,0,0.07); text-align:center; }
         @media(max-width:767px){
           .mission-grid{grid-template-columns:1fr!important;gap:32px!important}
-          .about-hero{padding-top:96px!important;padding-bottom:48px!important}
-          .about-sec{padding-top:48px!important;padding-bottom:48px!important}
+          .about-hero{padding-top:80px!important;padding-bottom:40px!important;padding-left:20px!important;padding-right:20px!important}
+          .about-sec{padding-top:48px!important;padding-bottom:48px!important;padding-left:20px!important;padding-right:20px!important}
           .about-stats{gap:20px!important}
+          .mission-text{font-size:14px!important;line-height:1.65!important}
+          .dark-card{padding:24px!important}
+          .val-card{padding:20px!important}
+          .tm-card{padding:20px!important}
         }
       `}</style>
 
@@ -77,10 +81,10 @@ export default function AboutPage() {
             <h2 style={{ fontSize:"clamp(24px,3.5vw,40px)", fontWeight:700, color:"#111", letterSpacing:-1, lineHeight:1.2, marginBottom:20 }}>
               Make AI-powered software accessible to every ambitious business
             </h2>
-            <p style={{ fontSize:15, color:"#555", lineHeight:1.75, marginBottom:16 }}>
+            <p className="mission-text" style={{ fontSize:15, color:"#555", lineHeight:1.75, marginBottom:16 }}>
               For too long, advanced AI and high-quality software were reserved for companies with deep pockets and Silicon Valley addresses. We started Crenosoft to change that.
             </p>
-            <p style={{ fontSize:15, color:"#555", lineHeight:1.75, marginBottom:32 }}>
+            <p className="mission-text" style={{ fontSize:15, color:"#555", lineHeight:1.75, marginBottom:32 }}>
               From a growing e-commerce brand in Chennai to a fintech startup in Bangalore — every business deserves technology that gives them a genuine advantage.
             </p>
             <div className="about-stats" style={{ display:"flex", gap:32, flexWrap:"wrap" }}>
@@ -92,10 +96,10 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-          <div style={{ background:"#111", borderRadius:24, padding:36, color:"white" }}>
+          <div className="dark-card" style={{ background:"#111", borderRadius:24, padding:36, color:"white" }}>
             <Globe size={36} style={{ color:"#86868b", marginBottom:16 }} />
             <h3 style={{ fontSize:22, fontWeight:700, marginBottom:12, letterSpacing:-0.5 }}>India-based. Globally trusted.</h3>
-            <p style={{ fontSize:14, color:"rgba(255,255,255,0.55)", lineHeight:1.7, marginBottom:24 }}>
+            <p className="mission-text" style={{ fontSize:14, color:"rgba(255,255,255,0.55)", lineHeight:1.7, marginBottom:24 }}>
               Our team is based across India — a nation producing some of the world&apos;s finest engineers, designers, and AI researchers. We combine the cost advantages of Indian talent with the quality standards of the world&apos;s best product companies.
             </p>
             <Link href="/contact" style={{ display:"inline-flex", alignItems:"center", gap:6, color:"#86868b", textDecoration:"none", fontWeight:600, fontSize:14 }}>
