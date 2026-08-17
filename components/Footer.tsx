@@ -8,6 +8,14 @@ const SERVICES = [
   ["Cloud Solutions", "/services/cloud-solutions"],
   ["UI/UX Design", "/services/ui-ux-design"],
 ];
+const INDUSTRIES = [
+  ["Fintech", "/industries/fintech"],
+  ["Healthcare", "/industries/healthcare"],
+  ["E-commerce & D2C", "/industries/ecommerce"],
+  ["Logistics", "/industries/logistics"],
+  ["EdTech", "/industries/edtech"],
+  ["B2B SaaS", "/industries/b2b-saas"],
+];
 const COMPANY = [["About Us","/about"],["Blog","/blog"],["Careers","/about#careers"],["Contact","/contact"],["Privacy Policy","/privacy"],["Terms","/terms"]];
 
 const FL = { display:"block" as const, fontSize:14, color:"#6e6e73", textDecoration:"none", padding:"4px 0", transition:"color 0.15s" };
@@ -18,7 +26,7 @@ export default function Footer() {
     <footer style={{ background:"#f5f5f7", borderTop:"1px solid #d2d2d7" }}>
       <style>{`.fl:hover{color:#3d3d3d!important}`}</style>
       <div style={{ maxWidth:1200, margin:"0 auto", padding:"64px 24px 0" }}>
-        <div style={{ display:"grid", gridTemplateColumns:"2fr 1.2fr 1fr 1.2fr", gap:48 }}>
+        <div style={{ display:"grid", gridTemplateColumns:"1.6fr 1fr 1fr 1fr 1.2fr", gap:40 }}>
 
           <div>
             <Link href="/" style={{ display:"flex", alignItems:"center", gap:10, textDecoration:"none", marginBottom:16 }}>
@@ -29,7 +37,7 @@ export default function Footer() {
               </svg>
               <span style={{ fontSize:18, fontWeight:700, color:"#1d1d1f", letterSpacing:-0.5 }}>crenosoft</span>
             </Link>
-            <p style={{ fontSize:14, color:"#6e6e73", lineHeight:1.7, maxWidth:280, marginBottom:24 }}>
+            <p style={{ fontSize:14, color:"#6e6e73", lineHeight:1.7, maxWidth:260, marginBottom:24 }}>
               AI-first software development company in India. We build intelligent products that help businesses grow faster and operate smarter.
             </p>
             <div style={{ display:"flex", gap:20 }}>
@@ -47,6 +55,11 @@ export default function Footer() {
           </div>
 
           <div>
+            <p style={FH}>Industries</p>
+            {INDUSTRIES.map(([n,h])=><Link key={h} href={h} className="fl" style={FL}>{n}</Link>)}
+          </div>
+
+          <div>
             <p style={FH}>Company</p>
             {COMPANY.map(([n,h])=><Link key={h} href={h} className="fl" style={FL}>{n}</Link>)}
           </div>
@@ -58,7 +71,7 @@ export default function Footer() {
               <a href="tel:+918303805307" style={{ fontSize:13, color:"#6e6e73", textDecoration:"none" }}>+91 83038 05307</a>
               <a href="tel:+919939931010" style={{ fontSize:13, color:"#6e6e73", textDecoration:"none" }}>+91 99399 31010</a>
               <span style={{ fontSize:13, color:"#6e6e73", lineHeight:1.6 }}>551 KA/A154B, Azad Nagar,<br/>Alambagh, Lucknow – 226005</span>
-              <span style={{ fontSize:12, color:"#86868b" }}>🕐 Available 24/7</span>
+              <span style={{ fontSize:12, color:"#86868b" }}>Available 24/7</span>
               <span style={{ fontSize:12, color:"#86868b" }}>LLPIN: ACP-2019</span>
             </div>
             <div style={{ marginTop:20 }}>
