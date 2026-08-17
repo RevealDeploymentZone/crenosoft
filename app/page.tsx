@@ -59,10 +59,11 @@ export default function Home() {
         .blog-link:hover{background:#f0f0f0!important}
         @media(max-width:900px){.stat-row{grid-template-columns:repeat(2,1fr)!important}.testi-row{grid-template-columns:1fr!important}.why-grid{grid-template-columns:1fr!important}.ind-grid{grid-template-columns:1fr 1fr!important}.blog-grid{grid-template-columns:1fr 1fr!important}}
         @media(max-width:700px){.svc-grid{grid-template-columns:1fr!important}.hero-btns{flex-direction:column!important;align-items:stretch!important}.ind-grid{grid-template-columns:1fr!important}.blog-grid{grid-template-columns:1fr!important}}
+        @media(max-width:767px){.sec-pad{padding-top:52px!important;padding-bottom:52px!important}.sec-pad-sm{padding-top:40px!important;padding-bottom:40px!important}}
       `}</style>
 
       {/* HERO */}
-      <section style={{ minHeight:"100vh",background:"#fff",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"120px 24px 80px",textAlign:"center",position:"relative",overflow:"hidden",borderBottom:"1px solid #e5e5ea" }}>
+      <section style={{ minHeight:"100vh",background:"#fff",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"clamp(80px,12vw,120px) 20px clamp(48px,8vw,80px)",textAlign:"center",position:"relative",overflow:"hidden",borderBottom:"1px solid #e5e5ea" }}>
         <div style={{ position:"absolute",inset:0,background:"radial-gradient(ellipse 80% 50% at 50% 0%, #f5f5f7, transparent)",pointerEvents:"none" }}/>
         <div style={{ position:"relative",zIndex:1,maxWidth:820 }}>
           <div style={{ display:"inline-flex",alignItems:"center",gap:8,background:"#f5f5f7",border:"1px solid #d2d2d7",borderRadius:100,padding:"6px 16px",marginBottom:40 }}>
@@ -77,7 +78,7 @@ export default function Home() {
             Custom AI software, automation systems, web apps, and mobile products for Indian startups and enterprises. 150+ projects shipped since 2022.
           </p>
           <div className="hero-btns" style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
-            <Link href="/contact" className="cta-btn" style={{ display:"inline-flex",alignItems:"center",gap:8,background:"#1d1d1f",color:"#fff",padding:"14px 28px",borderRadius:100,fontWeight:600,fontSize:15,textDecoration:"none",transition:"opacity 0.2s" }}>
+            <Link href="/contact" className="cta-btn" style={{ display:"inline-flex",alignItems:"center",gap:8,background:"#1d1d1f",color:"#fff",padding:"12px 24px",borderRadius:100,fontWeight:600,fontSize:14,textDecoration:"none",transition:"opacity 0.2s" }}>
               Start Your Project →
             </Link>
             <Link href="/services" className="cta-ghost" style={{ display:"inline-flex",alignItems:"center",gap:8,background:"#f5f5f7",border:"1px solid #d2d2d7",color:"#1d1d1f",padding:"14px 28px",borderRadius:100,fontWeight:500,fontSize:15,textDecoration:"none",transition:"background 0.2s" }}>
@@ -100,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* INTRO */}
-      <section style={{ background:"#fff",padding:"80px 24px" }}>
+      <section className="sec-pad-sm" style={{ background:"#fff",padding:"80px 24px" }}>
         <div style={{ maxWidth:800,margin:"0 auto",textAlign:"center" }}>
           <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:16 }}>Who We Are</p>
           <h2 style={{ fontSize:"clamp(28px,4vw,44px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.04em",lineHeight:1.1,marginBottom:28 }}>
@@ -119,7 +120,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section style={{ background:"#f5f5f7",padding:"96px 24px" }}>
+      <section className="sec-pad" style={{ background:"#f5f5f7",padding:"96px 24px" }}>
         <div style={{ maxWidth:1160,margin:"0 auto" }}>
           <div style={{ textAlign:"center",marginBottom:64 }}>
             <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>What We Build</p>
@@ -148,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* WHY CRENOSOFT */}
-      <section style={{ background:"#fff",padding:"96px 24px" }}>
+      <section className="sec-pad" style={{ background:"#fff",padding:"96px 24px" }}>
         <div style={{ maxWidth:1160,margin:"0 auto" }}>
           <div style={{ textAlign:"center",marginBottom:56 }}>
             <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>Why Crenosoft</p>
@@ -168,7 +169,7 @@ export default function Home() {
       </section>
 
       {/* INDUSTRIES */}
-      <section style={{ background:"#f5f5f7",padding:"80px 24px" }}>
+      <section className="sec-pad-sm" style={{ background:"#f5f5f7",padding:"80px 24px" }}>
         <div style={{ maxWidth:1160,margin:"0 auto" }}>
           <div style={{ textAlign:"center",marginBottom:52 }}>
             <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>Industries</p>
@@ -186,7 +187,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section style={{ background:"#fff",padding:"96px 24px" }}>
+      <section className="sec-pad" style={{ background:"#fff",padding:"96px 24px" }}>
         <div style={{ maxWidth:1160,margin:"0 auto" }}>
           <div style={{ textAlign:"center",marginBottom:56 }}>
             <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>Client Stories</p>
@@ -206,7 +207,7 @@ export default function Home() {
       </section>
 
       {/* BLOG RESOURCES */}
-      <section style={{ background:"#f5f5f7",padding:"80px 24px",borderTop:"1px solid #e5e5ea" }}>
+      <section className="sec-pad-sm" style={{ background:"#f5f5f7",padding:"80px 24px",borderTop:"1px solid #e5e5ea" }}>
         <div style={{ maxWidth:1160,margin:"0 auto" }}>
           <div style={{ textAlign:"center",marginBottom:48 }}>
             <p style={{ fontSize:12,fontWeight:700,color:"#86868b",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>Resources</p>
@@ -230,7 +231,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section style={{ background:"#1d1d1f",padding:"96px 24px",textAlign:"center" }}>
+      <section className="sec-pad" style={{ background:"#1d1d1f",padding:"96px 24px",textAlign:"center" }}>
         <div style={{ maxWidth:680,margin:"0 auto" }}>
           <h2 style={{ fontSize:"clamp(32px,5vw,56px)",fontWeight:700,color:"#fff",letterSpacing:"-0.045em",lineHeight:1.06,marginBottom:20 }}>
             Got a project in mind?
