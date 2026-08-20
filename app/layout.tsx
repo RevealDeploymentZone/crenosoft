@@ -235,16 +235,118 @@ const localBusinessSchema = {
   currenciesAccepted: "INR",
   paymentAccepted: "UPI, Bank Transfer, Credit Card",
   areaServed: "India",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "50",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Aditya Sharma" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody: "The AI automation Crenosoft built handles what used to take our team 35 hours a week. It runs overnight, and by morning everything is processed. The payback period was under 4 months.",
+      datePublished: "2025-06-01",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Priya Mehta" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody: "We migrated to Next.js App Router with Crenosoft and went from a PageSpeed score of 41 to 94. Organic traffic is up 37% since launch. Their team actually cares about the outcome, not just the invoice.",
+      datePublished: "2025-05-15",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Rahul Verma" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody: "They navigated DPDP compliance requirements without us having to explain them. The enterprise security review that used to take 3 months was cleared in 3 weeks because the architecture was already right.",
+      datePublished: "2025-04-20",
+    },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What does Crenosoft do?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Crenosoft is a custom software development company based in Lucknow, India. We build AI-powered software, web apps, mobile apps, cloud infrastructure, and UI/UX design for Indian startups and enterprises. We have delivered 150+ projects since 2022.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does custom software development cost in India?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Custom software development costs in India typically range from ₹3–5 lakh for an MVP to ₹15–50 lakh for a full-featured enterprise product. AI-powered features, compliance requirements (DPDP, RBI, ABDM), and integrations with third-party systems affect the final price. Crenosoft provides free 45-minute discovery calls to give honest scope and cost estimates.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does it take to build a software product?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A well-scoped MVP typically takes 8–14 weeks to build and launch. Enterprise platforms with complex integrations take 4–9 months. At Crenosoft, every project starts with a discovery phase to define scope accurately before development begins, so there are no surprise delays.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does Crenosoft build AI software for Indian businesses?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. AI software development is Crenosoft's core specialisation. We build custom LLMs, RAG (Retrieval-Augmented Generation) systems, ML models, and AI-powered SaaS products using models from OpenAI, Anthropic (Claude), Google Gemini, and open-source models like Llama and Mistral. We have shipped AI products for fintech, healthcare, logistics, and e-commerce companies across India.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is Crenosoft DPDP compliant?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Crenosoft builds all software with Indian data compliance requirements built in from day one — including the Digital Personal Data Protection (DPDP) Act, RBI guidelines for fintech, and ABDM standards for healthcare software. We use AWS Mumbai (ap-south-1) region for data residency requirements.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Where is Crenosoft located?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Crenosoft is based in Lucknow, Uttar Pradesh, India (551 KA/A154B, Azad Nagar, Alambagh, Lucknow – 226005). We work with clients across India — Mumbai, Delhi, Bangalore, Hyderabad — as well as international clients in the US and Middle East.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What industries does Crenosoft serve?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Crenosoft builds software for fintech (RBI-compliant payment and lending platforms), healthcare (ABDM-compliant patient management and telemedicine), e-commerce and D2C (UPI integration, inventory automation), logistics (route optimisation and fleet tracking), EdTech (LMS and AI tutors), and B2B SaaS (multi-tenant platforms for Indian and global founders).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I get started with Crenosoft?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You can book a free 45-minute discovery call through the Contact page at crenosoft.in/contact, or email hello@crenosoft.in. During the call, we review your product idea, ask the questions that matter, and give honest feedback on scope, timeline, and budget — whether we are the right fit or not.",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#3d3d3d" />
+        <meta name="theme-color" content="#F07336" />
         <meta name="geo.region" content="IN-UP" />
         <meta name="geo.placename" content="Lucknow" />
         <meta name="geo.position" content="26.8467;80.9462" />
@@ -261,6 +363,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
       <body>

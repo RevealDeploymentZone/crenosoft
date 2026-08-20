@@ -299,14 +299,50 @@ export async function generateStaticParams() {
 }
 
 // ── Metadata ─────────────────────────────────────────────────────────────────
+const DATE_MAP: Record<string, string> = {
+  "ai-automation-india-2025": "2025-08-10",
+  "custom-ai-software-development-india-2025": "2025-08-16",
+  "ui-ux-design-trends-2025-india": "2025-08-16",
+  "cloud-migration-guide-indian-startups-2025": "2025-08-16",
+  "building-ai-powered-saas-india-2025": "2025-08-16",
+  "llm-integration-guide": "2025-07-28",
+  "nextjs-seo-2025": "2025-07-15",
+  "ai-agent-basics": "2025-07-10",
+  "react-native-vs-flutter": "2025-07-05",
+  "cloud-cost-optimisation": "2025-07-01",
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = POSTS[slug];
-  if (!post) return { title: "Article Not Found — Crenosoft" };
+  const meta = POST_META[slug];
+  if (!post && !meta) return { title: "Article Not Found — Crenosoft" };
+  const title = post?.title ?? meta?.title ?? "Crenosoft Blog";
+  const description = post?.excerpt ?? meta?.excerpt ?? "";
+  const url = `https://www.crenosoft.in/blog/${slug}`;
+  const published = DATE_MAP[slug] ?? "2025-08-01";
   return {
-    title: `${post.title} — Crenosoft Blog`,
-    description: post.excerpt,
-    alternates: { canonical: `https://www.crenosoft.in/blog/${slug}` },
+    title: `${title} — Crenosoft Blog`,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title,
+      description,
+      siteName: "Crenosoft",
+      locale: "en_IN",
+      publishedTime: published,
+      authors: ["https://www.crenosoft.in"],
+      images: [{ url: "https://www.crenosoft.in/og-image.png", width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://www.crenosoft.in/og-image.png"],
+      site: "@crenosoft",
+    },
   };
 }
 
