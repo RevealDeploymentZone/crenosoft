@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "AI Software Development Company India — Custom LLM, RAG, ML | Crenosoft",
   description: "Custom AI software development in India — LLM integrations, RAG systems, ML models, AI agents, and AI-powered SaaS. Production-ready, DPDP-compliant. Based in Lucknow.",
-  keywords: ["AI software development India","custom LLM development","RAG system India","AI SaaS development","machine learning company India","AI development Lucknow"],
   alternates: { canonical: "https://www.crenosoft.in/services/ai-software-development" },
 };
 

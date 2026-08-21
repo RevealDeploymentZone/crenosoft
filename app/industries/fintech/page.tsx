@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Fintech Software Development India — RBI Compliant, UPI, Lending | Crenosoft",
   description: "Custom fintech software development in India — payment platforms, lending systems, fraud detection, and RBI-compliant financial apps. PCI-DSS, ISO 27001. Lucknow.",
-  keywords: ["fintech software development India","payment platform development India","RBI compliant fintech","lending software India","fraud detection India","UPI integration development"],
   alternates: { canonical: "https://www.crenosoft.in/industries/fintech" },
 };
 

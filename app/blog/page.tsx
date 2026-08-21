@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   title: "Blog — AI, Software Development & Technology Insights",
   description: "Expert insights on AI software development, automation trends, web development best practices, and technology strategy for Indian businesses.",
   alternates: { canonical: "https://www.crenosoft.in/blog" },
+  openGraph: {
+    type: "website",
+    url: "https://www.crenosoft.in/blog",
+    title: "Crenosoft Blog — AI & Software Development Insights",
+    description: "Expert insights on AI software development, automation trends, web development best practices, and technology strategy for Indian businesses.",
+    siteName: "Crenosoft",
+    locale: "en_IN",
+    images: [{ url: "https://www.crenosoft.in/og-image.png", width: 1200, height: 630, alt: "Crenosoft Blog" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Crenosoft Blog — AI & Software Development Insights",
+    description: "Expert insights on AI software development, automation trends, web development best practices, and technology strategy for Indian businesses.",
+    images: ["https://www.crenosoft.in/og-image.png"],
+    site: "@crenosoft",
+  },
 };
 
 const posts = [

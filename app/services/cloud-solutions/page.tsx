@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Cloud Solutions India — AWS, GCP, Azure, DevOps | Crenosoft",
   description: "Cloud architecture, migration, and DevOps for Indian businesses — AWS Mumbai (ap-south-1) for DPDP compliance, CI/CD pipelines, Kubernetes, cost optimisation. Lucknow.",
-  keywords: ["cloud solutions India","AWS cloud services India","cloud migration India","DevOps company India","cloud architecture India","cloud cost optimization India","Kubernetes DevOps India"],
   alternates: { canonical: "https://www.crenosoft.in/services/cloud-solutions" },
 };
 

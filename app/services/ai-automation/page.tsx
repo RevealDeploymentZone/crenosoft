@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "AI Automation Services India — Workflow & Document Automation | Crenosoft",
   description: "AI-powered business automation in India — document processing, email triage, workflow automation, and AI agents. Connect your existing tools. DPDP-compliant. Based in Lucknow.",
-  keywords: ["AI automation India","business process automation India","intelligent automation India","workflow automation India","document automation India","RPA India"],
   alternates: { canonical: "https://www.crenosoft.in/services/ai-automation" },
 };
 

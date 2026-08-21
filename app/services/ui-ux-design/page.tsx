@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "UI/UX Design Company India — Figma, Product Design, Design Systems | Crenosoft",
   description: "UI/UX design services in India — user research, wireframes, Figma prototypes, design systems, and developer handoff. Designed for Indian users. WCAG 2.1 compliant. Lucknow.",
-  keywords: ["UI UX design company India","UX design services India","Figma design India","product design India","mobile UI design India","design system India","UX research India"],
   alternates: { canonical: "https://www.crenosoft.in/services/ui-ux-design" },
 };
 

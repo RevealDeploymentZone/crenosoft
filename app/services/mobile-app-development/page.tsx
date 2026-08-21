@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Mobile App Development Company India — iOS, Android, React Native, Flutter | Crenosoft",
   description: "Mobile app development in India — React Native, Flutter, Swift, Kotlin. Tested on real Indian Android devices. UPI payments, multilingual support, DPDP-compliant. Lucknow.",
-  keywords: ["mobile app development India","React Native development India","Flutter app development India","iOS Android app development India","cross-platform app India","mobile app development Lucknow"],
   alternates: { canonical: "https://www.crenosoft.in/services/mobile-app-development" },
 };
 

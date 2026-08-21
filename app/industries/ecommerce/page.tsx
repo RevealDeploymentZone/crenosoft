@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "E-commerce & D2C Software Development India — UPI, WhatsApp Commerce | Crenosoft",
   description: "Custom e-commerce and D2C software development in India — storefronts, UPI payment integration, inventory automation, AI recommendations, WhatsApp commerce. Lucknow.",
-  keywords: ["ecommerce software development India","D2C platform India","UPI payment integration","WhatsApp commerce India","custom storefront India","inventory management software India"],
   alternates: { canonical: "https://www.crenosoft.in/industries/ecommerce" },
 };
 

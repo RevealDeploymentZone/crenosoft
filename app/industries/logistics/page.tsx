@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Logistics Software Development India — Route Optimization, Fleet Tracking, WMS | Crenosoft",
   description: "Custom logistics software development in India — route optimization, fleet tracking, warehouse automation, demand forecasting, and supply chain software. Lucknow.",
-  keywords: ["logistics software development India","route optimization software India","fleet tracking software India","warehouse management system India","supply chain software India","last mile delivery software"],
   alternates: { canonical: "https://www.crenosoft.in/industries/logistics" },
 };
 

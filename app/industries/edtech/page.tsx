@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "EdTech Software Development India — LMS, AI Tutor, Live Classes | Crenosoft",
   description: "Custom EdTech software development in India — learning management systems, adaptive assessments, AI tutors, live class infrastructure, and education SaaS. Lucknow.",
-  keywords: ["edtech software development India","LMS development India","AI tutor India","live class platform India","adaptive learning software India","education technology India"],
   alternates: { canonical: "https://www.crenosoft.in/industries/edtech" },
 };
 

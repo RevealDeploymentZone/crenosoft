@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Web Development Company India — Next.js, React, SaaS | Crenosoft",
   description: "Web development company in India — Next.js, React, SaaS applications, e-commerce, and performance optimization. SEO-first, Core Web Vitals optimised. Based in Lucknow.",
-  keywords: ["web development company India","Next.js development India","React development India","SaaS web application India","e-commerce development India","web development Lucknow"],
   alternates: { canonical: "https://www.crenosoft.in/services/web-development" },
 };
 

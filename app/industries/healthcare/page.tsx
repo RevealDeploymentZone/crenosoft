@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Healthcare Software Development India — ABDM, Telemedicine, EHR | Crenosoft",
   description: "Custom healthcare software development in India — ABDM-compliant patient management, telemedicine platforms, diagnostic AI, and EHR systems. DISHA-compliant. Lucknow.",
-  keywords: ["healthcare software development India","ABDM compliant software","telemedicine platform India","EHR software India","diagnostic AI India","health tech development India"],
   alternates: { canonical: "https://www.crenosoft.in/industries/healthcare" },
 };
 

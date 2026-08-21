@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "B2B SaaS Development India — Multi-Tenant, Billing, AI Features | Crenosoft",
   description: "Full-stack B2B SaaS development in India — multi-tenancy architecture, billing, AI features, web and mobile, cloud infrastructure. For Indian and global SaaS founders. Lucknow.",
-  keywords: ["B2B SaaS development India","SaaS product development India","multi-tenant software India","SaaS startup India","custom SaaS development","SaaS MVP India"],
   alternates: { canonical: "https://www.crenosoft.in/industries/b2b-saas" },
 };
 

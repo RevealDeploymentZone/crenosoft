@@ -25,7 +25,7 @@ const il = (href: string, text: string) => `<a href="${href}" ${ls}>${text}</a>`
 const el = (href: string, text: string) =>
   `<a href="${href}" target="_blank" rel="noopener noreferrer" ${ls}>${text}</a>`;
 
-const POST_META: Record<string, { title: string; category: string; categoryColor: string; excerpt: string }> = {
+const POST_META: Record<string, { title: string; category: string; categoryColor: string; excerpt: string; image?: string }> = {
   "ai-automation-india-2025": { title: "Why AI Automation is the Biggest Business Opportunity in India Right Now", category: "AI Automation", categoryColor: "#f59e0b", excerpt: "Indian businesses are sitting on a goldmine of operational efficiency gains. Here's why 2025 is the year to act." },
   "custom-ai-software-development-india-2025": { title: "Custom AI Software Development for Indian Businesses: The Complete 2025 Guide", category: "AI Development", categoryColor: "#3d3d3d", excerpt: "Everything you need to know before investing in custom AI — from RAG vs fine-tuning to costs and vendor red flags." },
   "ui-ux-design-trends-2025-india": { title: "UI/UX Design Trends Dominating 2025: A Complete Guide for Indian Businesses", category: "UI/UX Design", categoryColor: "#8b5cf6", excerpt: "The shifts in user expectations separating high-performing Indian digital products from the rest." },
@@ -307,9 +307,9 @@ const DATE_MAP: Record<string, string> = {
   "building-ai-powered-saas-india-2025": "2025-08-16",
   "llm-integration-guide": "2025-07-28",
   "nextjs-seo-2025": "2025-07-15",
-  "ai-agent-basics": "2025-07-10",
-  "react-native-vs-flutter": "2025-07-05",
-  "cloud-cost-optimisation": "2025-07-01",
+  "ai-agent-basics": "2025-07-02",
+  "react-native-vs-flutter": "2025-06-20",
+  "cloud-cost-optimisation": "2025-06-08",
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -321,8 +321,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const description = post?.excerpt ?? meta?.excerpt ?? "";
   const url = `https://www.crenosoft.in/blog/${slug}`;
   const published = DATE_MAP[slug] ?? "2025-08-01";
+
+  // Use per-article image if specified in POST_META, otherwise use article-specific path
+  // To add custom images: place 1200×630 PNG files in /public/blog-images/{slug}.png
+  // OR add image: "https://..." to the POST_META entry
+  const ogImage = meta?.image ?? `https://www.crenosoft.in/blog-images/${slug}.png`;
+
+  // Calculate optimal title: remove year if title exceeds 60 chars
+  const shortTitle = title.replace(/ in 202[56]:?| 202[56]:?/g, '');
+  const finalTitle = `${shortTitle} | Crenosoft`;
+
   return {
-    title: `${title} — Crenosoft Blog`,
+    title: { absolute: finalTitle },
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -334,13 +344,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       locale: "en_IN",
       publishedTime: published,
       authors: ["https://www.crenosoft.in"],
-      images: [{ url: "https://www.crenosoft.in/og-image.png", width: 1200, height: 630, alt: title }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["https://www.crenosoft.in/og-image.png"],
+      images: [ogImage],
       site: "@crenosoft",
     },
   };
@@ -411,9 +421,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     "building-ai-powered-saas-india-2025": "2025-08-16",
     "llm-integration-guide": "2025-07-28",
     "nextjs-seo-2025": "2025-07-15",
-    "ai-agent-basics": "2025-07-10",
-    "react-native-vs-flutter": "2025-07-05",
-    "cloud-cost-optimisation": "2025-07-01",
+    "ai-agent-basics": "2025-07-02",
+    "react-native-vs-flutter": "2025-06-20",
+    "cloud-cost-optimisation": "2025-06-08",
   };
   const articleSchema = {
     "@context": "https://schema.org",
