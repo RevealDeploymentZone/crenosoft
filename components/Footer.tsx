@@ -1,11 +1,16 @@
 import Link from "next/link";
 
 const SERVICES = [
+  ["Custom Software Development", "/services/custom-software-development"],
+  ["AI Agent Development", "/services/ai-agent-development"],
   ["AI Software Development", "/services/ai-software-development"],
-  ["AI Automation", "/services/ai-automation"],
+  ["MVP Development", "/services/mvp-development"],
+  ["Legacy Modernization", "/services/legacy-modernization"],
+  ["IT Staff Augmentation", "/services/it-staff-augmentation"],
+  ["Cloud Consulting", "/services/cloud-consulting"],
   ["Web Development", "/services/web-development"],
   ["Mobile App Development", "/services/mobile-app-development"],
-  ["Cloud Solutions", "/services/cloud-solutions"],
+  ["AI Automation", "/services/ai-automation"],
   ["UI/UX Design", "/services/ui-ux-design"],
 ];
 const INDUSTRIES = [

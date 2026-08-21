@@ -3,11 +3,16 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 
 const NAV_SERVICES = [
+  { name: "Custom Software Development", href: "/services/custom-software-development", desc: "Tailored solutions for your business" },
+  { name: "AI Agent Development", href: "/services/ai-agent-development", desc: "Autonomous AI systems that take action" },
   { name: "AI Software Development", href: "/services/ai-software-development", desc: "LLMs, ML models & intelligent apps" },
-  { name: "AI Automation", href: "/services/ai-automation", desc: "Workflows, RPA & AI agents" },
+  { name: "MVP Development", href: "/services/mvp-development", desc: "Launch your product in 8-12 weeks" },
+  { name: "Legacy Modernization", href: "/services/legacy-modernization", desc: "Migrate outdated systems to modern stacks" },
+  { name: "IT Staff Augmentation", href: "/services/it-staff-augmentation", desc: "Hire skilled developers on demand" },
+  { name: "Cloud Consulting", href: "/services/cloud-consulting", desc: "AWS, GCP, Azure & DevOps expertise" },
   { name: "Web Development", href: "/services/web-development", desc: "Next.js, React & full-stack" },
   { name: "Mobile App Development", href: "/services/mobile-app-development", desc: "iOS, Android & cross-platform" },
-  { name: "Cloud Solutions", href: "/services/cloud-solutions", desc: "AWS, GCP, Azure & DevOps" },
+  { name: "AI Automation", href: "/services/ai-automation", desc: "Workflows, RPA & AI agents" },
   { name: "UI/UX Design", href: "/services/ui-ux-design", desc: "User research & product design" },
 ];
 
