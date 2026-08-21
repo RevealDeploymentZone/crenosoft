@@ -6,12 +6,18 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.crenosoft.in"),
   title: {
-    default: "Crenosoft — AI Software Development & Automation Company in India",
-    template: "%s | Crenosoft",
+    default: "Crenosoft — Leading AI Software Development Company in India | Custom Software Solutions",
+    template: "%s | Crenosoft — AI Software Development India",
   },
   description:
-    "Crenosoft is a custom software development company in India specialising in AI software development, AI automation, web and mobile app development, cloud solutions, and UI/UX design for Indian businesses and global startups.",
+    "Crenosoft is India's leading custom AI software development company. We build AI-powered software, automation systems, web apps, mobile apps, and cloud solutions for Indian businesses. Based in Lucknow, serving clients across India and globally since 2022.",
   keywords: [
+    "Crenosoft",
+    "Crenosoft India",
+    "Crenosoft software company",
+    "Crenosoft Lucknow",
+    "Crenosoft AI development",
+    "Crenosoft services",
     "AI software development India",
     "custom software development India",
     "AI automation company India",
@@ -30,8 +36,8 @@ export const metadata: Metadata = {
     "Next.js development India",
     "React Native app development India",
     "AI consulting India",
-    "Crenosoft",
     "custom AI software India",
+    "best software development company India",
   ],
   authors: [{ name: "Crenosoft", url: "https://www.crenosoft.in" }],
   creator: "Crenosoft",
@@ -52,23 +58,23 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.crenosoft.in",
     siteName: "Crenosoft",
-    title: "Crenosoft — AI Software Development & Automation Company in India",
+    title: "Crenosoft — Leading AI Software Development Company in India",
     description:
-      "Crenosoft builds custom AI software, web and mobile apps, and automation systems for Indian businesses. Based in Lucknow. Serving clients across India and globally.",
+      "Crenosoft builds custom AI software, web and mobile apps, and automation systems for Indian businesses. Leading software development company based in Lucknow, India. 150+ projects delivered since 2022.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Crenosoft — AI Software Development Company in India",
+        alt: "Crenosoft Logo — AI Software Development Company in India",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Crenosoft — AI Software Development & Automation",
+    title: "Crenosoft — Leading AI Software Development Company India",
     description:
-      "Custom AI software, web apps, and automation for Indian businesses. Based in Lucknow.",
+      "Crenosoft builds custom AI software, web apps, and automation for Indian businesses. Leading software development company based in Lucknow, India.",
     images: ["/og-image.png"],
     creator: "@crenosoft",
     site: "@crenosoft",
@@ -267,6 +273,52 @@ const localBusinessSchema = {
   ],
 };
 
+const brandSchema = {
+  "@context": "https://schema.org",
+  "@type": "Brand",
+  "@id": "https://www.crenosoft.in/#brand",
+  name: "Crenosoft",
+  alternateName: ["Crenosoft India", "Crenosoft Software"],
+  url: "https://www.crenosoft.in",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://www.crenosoft.in/logo.png",
+    width: "512",
+    height: "512",
+  },
+  description: "Crenosoft is a leading AI software development company in India, specializing in custom software solutions, AI automation, and digital transformation for businesses.",
+  slogan: "AI Software Development & Automation Company in India",
+  foundingDate: "2022",
+  foundingLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Lucknow",
+      addressRegion: "Uttar Pradesh",
+      addressCountry: "IN",
+    },
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.crenosoft.in",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Crenosoft",
+      item: "https://www.crenosoft.in",
+    },
+  ],
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -367,6 +419,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(brandSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
       </head>
       <body>

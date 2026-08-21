@@ -3,8 +3,8 @@ import Link from "next/link";
 import StatsSlider from "@/components/StatsSlider";
 
 export const metadata: Metadata = {
-  title: "Crenosoft — AI Software Development & Automation Company in India",
-  description: "Crenosoft builds AI-powered software, automation systems, web apps, and mobile products for Indian startups and enterprises. Custom AI development company based in Lucknow, India.",
+  title: "Crenosoft — Leading AI Software Development Company in India | Custom Software Solutions",
+  description: "Crenosoft is India's leading AI software development company based in Lucknow. We build custom AI software, automation systems, web apps, and mobile products for Indian startups and enterprises. 150+ projects delivered since 2022. Choose Crenosoft for reliable software development.",
   alternates: { canonical: "https://www.crenosoft.in" },
 };
 
@@ -76,7 +76,7 @@ export default function Home() {
             <span style={{ color:"#86868b" }}>That Thinks.</span>
           </h1>
           <p style={{ fontSize:"clamp(16px,2.2vw,20px)",color:"#6e6e73",maxWidth:580,margin:"0 auto 48px",lineHeight:1.65 }}>
-            Custom AI software, automation systems, web apps, and mobile products for Indian startups and enterprises. 150+ projects shipped since 2022.
+            <strong>Crenosoft</strong> delivers custom AI software, automation systems, web apps, and mobile products for Indian startups and enterprises. 150+ projects shipped since 2022.
           </p>
           <div className="hero-btns" style={{ display:"flex",gap:12,justifyContent:"center",flexWrap:"wrap" }}>
             <Link href="/contact" className="cta-btn" style={{ display:"inline-flex",alignItems:"center",gap:8,background:"#1d1d1f",color:"#fff",padding:"12px 24px",borderRadius:100,fontWeight:600,fontSize:14,textDecoration:"none",transition:"opacity 0.2s" }}>
@@ -102,10 +102,10 @@ export default function Home() {
             Built for Founders and Product Teams<br/>Who Are Done With Mediocre Software
           </h2>
           <p style={{ fontSize:17,color:"#6e6e73",lineHeight:1.78,marginBottom:18,maxWidth:700,margin:"0 auto 18px" }}>
-            We are a software development company based in Lucknow, India, working with startups and businesses across India, the US, and the Middle East. Our team of engineers, AI specialists, and designers has shipped 150+ products since 2022 — from early-stage MVPs to enterprise platforms processing millions of transactions every month.
+            <strong>Crenosoft</strong> is a software development company based in Lucknow, India, working with startups and businesses across India, the US, and the Middle East. <strong>Crenosoft's</strong> team of engineers, AI specialists, and designers has shipped 150+ products since 2022 — from early-stage MVPs to enterprise platforms processing millions of transactions every month.
           </p>
           <p style={{ fontSize:17,color:"#6e6e73",lineHeight:1.78,marginBottom:36,maxWidth:700,margin:"0 auto 36px" }}>
-            Most software agencies promise the world and deliver a demo. We operate differently. Every project at Crenosoft starts with understanding your business problem first, then picking the right technology to solve it. No fads, no inflated scopes, no disappearing after launch.
+            Most software agencies promise the world and deliver a demo. <strong>Crenosoft</strong> operates differently. Every project at <strong>Crenosoft</strong> starts with understanding your business problem first, then picking the right technology to solve it. No fads, no inflated scopes, no disappearing after launch.
           </p>
           <Link href="/about" style={{ display:"inline-flex",alignItems:"center",gap:6,color:"#3d3d3d",fontWeight:600,fontSize:14,textDecoration:"none",borderBottom:"1px solid #d2d2d7",paddingBottom:2 }}>
             Learn how Crenosoft operates →
