@@ -2,257 +2,603 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Web Development Company India — Next.js, React, SaaS | Crenosoft",
-  description: "Web development company in India — Next.js, React, SaaS applications, e-commerce, and performance optimization. SEO-first, Core Web Vitals optimised. Based in Lucknow.",
-  alternates: { canonical: "https://www.crenosoft.in/services/web-development" },
+  title: "Custom Web Development Services India — Next.js, React, SaaS | Crenosoft",
+  description: "Custom web development company in India. We build Next.js applications, React web apps, SaaS platforms, and e-commerce sites. SEO-first, Core Web Vitals optimized, DPDP-compliant. Based in Lucknow.",
+  alternates: {
+    canonical: "https://www.crenosoft.in/services/web-development",
+  },
+  openGraph: {
+    title: "Custom Web Development Services India | Crenosoft",
+    description: "Custom web development—Next.js, React, SaaS platforms, e-commerce. SEO-first, performance-optimized.",
+    url: "https://www.crenosoft.in/services/web-development",
+    type: "website",
+    siteName: "Crenosoft",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Web Development Services India | Crenosoft",
+    description: "Custom web development—Next.js, React, SaaS platforms, e-commerce.",
+  },
 };
 
-const CAPS = [
-  ["🌐","Marketing & Corporate Websites","Conversion-optimised websites using Next.js App Router — fast load times, structured data, Core Web Vitals compliance built in. Not a Wix site dressed up as a custom build."],
-  ["⚙️","SaaS Web Applications","Full-featured platforms with authentication, billing (Razorpay + Stripe), multi-tenancy, real-time capabilities, admin dashboards, and a public API. Designed to scale from 100 to 100,000 users without a rewrite."],
-  ["🛒","E-commerce Platforms","Custom storefronts or headless Shopify/WooCommerce with Next.js frontend. UPI and Razorpay integration, GST calculation, Indian address validation, Shiprocket and Delhivery logistics integration."],
-  ["📈","SEO-First Development","Schema.org JSON-LD markup, semantic HTML5, dynamic sitemap generation, canonical URL management, hreflang for multilingual sites (Hindi, Tamil, Telugu, Marathi) — in the codebase, not a plugin."],
-  ["⚡","Performance Optimisation","Audits and fixes for existing sites — image optimisation pipelines, code splitting, lazy loading, CDN configuration. Typical outcome: 40–70% improvement in LCP, measurable ranking improvements within 90 days."],
-  ["🔌","API & Backend Development","REST and GraphQL APIs, database architecture (PostgreSQL, Redis), serverless functions, and third-party integrations. Designed for the query patterns your app actually runs, not just the happy path."],
+const CAPABILITIES = [
+  {
+    title: "Marketing & Corporate Websites",
+    icon: "🌐",
+    description: "Conversion-optimized websites using Next.js App Router—fast load times, structured data, Core Web Vitals compliance built in. Not a WordPress site with 40 plugins or a Wix template dressed up as custom development.",
+  },
+  {
+    title: "SaaS Web Applications",
+    icon: "⚙️",
+    description: "Full-featured platforms with authentication, billing (Razorpay + Stripe), multi-tenancy, real-time capabilities, admin dashboards, and public APIs. Designed to scale from 100 to 100,000 users without a rewrite. See MVP Development for rapid launch approach.",
+  },
+  {
+    title: "E-commerce Platforms",
+    icon: "🛒",
+    description: "Custom storefronts or headless Shopify/WooCommerce with Next.js frontend. UPI and Razorpay integration, GST calculation, Indian address validation, Shiprocket and Delhivery logistics integration, WhatsApp order notifications.",
+  },
+  {
+    title: "SEO-First Development",
+    icon: "📈",
+    description: "Schema.org JSON-LD markup, semantic HTML5, dynamic sitemap generation, canonical URL management, hreflang for multilingual sites (Hindi, Tamil, Telugu, Marathi)—in the codebase, not a plugin. Every page targets specific keywords from day one.",
+  },
+  {
+    title: "Performance Optimization",
+    icon: "⚡",
+    description: "Audits and fixes for existing sites—image optimization pipelines, code splitting, lazy loading, CDN configuration. Typical outcome: 40-70% improvement in LCP (Largest Contentful Paint), measurable ranking improvements within 90 days.",
+  },
+  {
+    title: "API & Backend Development",
+    icon: "🔌",
+    description: "REST and GraphQL APIs, database architecture (PostgreSQL, MySQL, MongoDB, Redis), serverless functions, and third-party integrations. Designed for the query patterns your app actually runs, not just the happy path. See API Development Services.",
+  },
 ];
 
-const PROCESS = [
-  ["01","Discovery & Scoping","We review your existing site (if applicable), map user journeys, define scope with a detailed specification, identify SEO requirements, performance targets, and technical constraints."],
-  ["02","Design","Wireframes in Figma, then visual designs. All reviewed and approved before a single line of development code is written. Changes in Figma take an hour. Changes in code take a day."],
-  ["03","Development","Two-week sprints. Staging deployment at the end of each sprint — you test on a real URL on your actual device, not screenshots. Every sprint ships working, tested software."],
-  ["04","QA & Launch","Cross-browser testing, responsive layout verification, performance benchmarking, security review (OWASP top 10), accessibility audit (WCAG 2.1 AA), and zero-downtime deployment."],
+const TECH_STACK = [
+  {
+    category: "Frontend",
+    icon: "🎨",
+    technologies: "Next.js 14/15, React 18, TypeScript, Tailwind CSS, shadcn/ui, Radix UI, Framer Motion",
+  },
+  {
+    category: "Backend",
+    icon: "⚙️",
+    technologies: "Node.js, Next.js API Routes, Express, NestJS, Python/Django, Go",
+  },
+  {
+    category: "Databases",
+    icon: "🗄️",
+    technologies: "PostgreSQL, MySQL, MongoDB, Redis, Pinecone (vector DB for AI features)",
+  },
+  {
+    category: "Cloud & DevOps",
+    icon: "☁️",
+    technologies: "Vercel, AWS (EC2, S3, CloudFront, RDS, Lambda), Google Cloud Platform, Docker, GitHub Actions",
+  },
+  {
+    category: "Payment & Auth",
+    icon: "💳",
+    technologies: "Razorpay, Stripe, Cashfree, PayU, NextAuth, Clerk, Auth0",
+  },
+  {
+    category: "Analytics & Monitoring",
+    icon: "📊",
+    technologies: "Google Analytics 4, Mixpanel, PostHog, Sentry, Vercel Analytics, Google Search Console",
+  },
+];
+
+const PROCESS_STEPS = [
+  {
+    number: 1,
+    title: "Discovery & Scoping",
+    description: "We review your existing site (if applicable), map user journeys, define scope with a detailed specification document, identify SEO requirements, performance targets (Core Web Vitals), and technical constraints. Output: fixed-price estimate and timeline.",
+  },
+  {
+    number: 2,
+    title: "Design & Prototyping",
+    description: "Wireframes in Figma, then visual designs with your brand colors, typography, and UI components. All reviewed and approved before a single line of development code is written. Changes in Figma take an hour. Changes in code take a day.",
+  },
+  {
+    number: 3,
+    title: "Development in Sprints",
+    description: "Two-week sprints. Staging deployment at the end of each sprint—you test on a real URL on your actual device, not screenshots. Every sprint ships working, tested software. You attend sprint reviews and provide feedback continuously.",
+  },
+  {
+    number: 4,
+    title: "QA, Security & Launch",
+    description: "Cross-browser testing (Chrome, Safari, Firefox, Edge), responsive layout verification on 5+ screen sizes, performance benchmarking against Core Web Vitals, security review (OWASP top 10), accessibility audit (WCAG 2.1 AA), and zero-downtime deployment.",
+  },
+];
+
+const BENEFITS = [
+  {
+    title: "SEO Built Into Development",
+    icon: "🔍",
+    description: "We don't bolt on SEO after launch. Every page has a primary keyword target, semantic HTML, Schema markup, optimized meta tags, and correct heading hierarchy from the first commit. Sites launch with 90+ Lighthouse SEO scores, not 60s that need months of fixes.",
+  },
+  {
+    title: "Performance That Ranks",
+    icon: "⚡",
+    description: "Core Web Vitals are a ranking factor. We optimize LCP, FID, and CLS from the start—image formats (WebP, AVIF), lazy loading, code splitting, CDN caching. Typical result: 95+ Lighthouse performance, sub-2s load times, measurable ranking improvements within 60-90 days.",
+  },
+  {
+    title: "DPDP Act 2023 Compliance",
+    icon: "🔒",
+    description: "Every web application includes DPDP compliance by default—consent management (cookie banners that actually work), data localization for Indian users, audit logs for data access, and cascading delete workflows. For regulated industries, we handle RBI, ABDM, and SEBI requirements.",
+  },
+  {
+    title: "Modern, Maintainable Code",
+    icon: "💻",
+    description: "TypeScript, ESLint, Prettier, comprehensive test coverage, and CI/CD pipelines. Code reviews on every merge. Your codebase will be maintainable for years, not months. If you hire developers later, they won't curse our names.",
+  },
+  {
+    title: "Indian Payment Integration",
+    icon: "💳",
+    description: "We've integrated Razorpay, Cashfree, PayU, and PhonePe Business for 50+ clients. UPI, cards, netbanking, wallets—all tested on real transactions. Webhook handling, reconciliation, GST-compliant invoices, and refund workflows included.",
+  },
+  {
+    title: "Post-Launch Support",
+    icon: "🛠️",
+    description: "We don't disappear after launch. Monthly retainers (₹1-4 lakhs/month) include security updates, dependency upgrades, performance monitoring, Google Search Console reviews, and a fixed number of hours for bug fixes and small features.",
+  },
+];
+
+const USE_CASES = [
+  {
+    title: "B2B SaaS Platforms",
+    icon: "💼",
+    description: "Multi-tenant SaaS applications with team workspaces, role-based access, usage-based billing, API keys, and webhooks. We've built CRM tools, project management platforms, analytics dashboards, and vertical SaaS for logistics, healthcare, and fintech.",
+  },
+  {
+    title: "E-commerce & D2C Brands",
+    icon: "🛍️",
+    description: "Custom storefronts optimized for Indian market—COD, UPI, Razorpay integration, GST calculation, pincode-based shipping, Shiprocket/Delhivery logistics, WhatsApp order updates. Headless Shopify or fully custom—depending on your inventory complexity and growth plans.",
+  },
+  {
+    title: "Marketing & Lead Generation Sites",
+    icon: "📈",
+    description: "High-conversion landing pages, multi-page corporate sites, service company websites. Built with Next.js for SEO and performance. Integrated with HubSpot, Salesforce, Zoho CRM, or custom lead management systems. Typical result: 90+ Lighthouse scores, 40-60% increase in organic traffic within 6 months.",
+  },
+  {
+    title: "Internal Tools & Dashboards",
+    icon: "📊",
+    description: "Admin panels, inventory management systems, reporting dashboards, workflow automation interfaces. Built with React + TypeScript, connected to your existing databases (PostgreSQL, MySQL, MongoDB). Faster and more tailored than forcing Retool or no-code tools to fit your process.",
+  },
+  {
+    title: "Marketplace & Aggregator Platforms",
+    icon: "🏪",
+    description: "Two-sided marketplaces connecting buyers and sellers—product listings, search and filters, messaging, escrow payments, reviews and ratings. We've built marketplaces for services, products, and professional networks. Built for scale from day one.",
+  },
+  {
+    title: "Progressive Web Apps (PWAs)",
+    icon: "📱",
+    description: "Web applications that work offline, send push notifications, and install like native apps. Common for field workforce tools, attendance systems, and inventory management. Built with Next.js PWA or React + Workbox for offline-first architecture.",
+  },
 ];
 
 const FAQS = [
-  ["Why Next.js over WordPress or Webflow?","WordPress and Webflow are good tools for certain use cases. But for anything that needs custom functionality, high performance, or is likely to evolve significantly, Next.js gives you a codebase you actually own and control. No plugin compatibility issues, no security vulnerabilities from unmaintained extensions, and no performance ceiling imposed by a platform. Full breakdown: Next.js SEO in 2025."],
-  ["How much does a website or web app cost?","Marketing website (5–15 pages): ₹1.5–5 lakhs. Corporate website with CMS: ₹3–8 lakhs. SaaS MVP: ₹8–20 lakhs. Custom e-commerce: ₹10–30 lakhs. Performance optimisation audit and fixes: ₹1–4 lakhs. All prices exclude GST. We give detailed estimates after reviewing your specific requirements — not ballpark figures from a 20-minute call."],
-  ["Do you build multilingual websites?","Yes. We have built sites in Hindi, Tamil, Telugu, Marathi, Bengali, and other regional languages with proper i18n support, hreflang configuration for regional SEO, and correct text rendering for Devanagari and other scripts."],
-  ["Can you take over a half-built project?","Yes, but we do a code review first. We need to understand the architecture, identify technical debt, and estimate what getting to a maintainable state would require. We give you an honest assessment — including if we think a rebuild is cleaner than continuing."],
-  ["How do you handle post-launch maintenance?","We offer monthly retainers: security updates, dependency upgrades, performance monitoring, and a fixed number of hours for bug fixes and small features. We do not disappear after launch. We also handle Google Search Console monitoring and Core Web Vitals tracking as part of SEO-focused retainers."],
-  ["Do you integrate with Indian payment gateways?","Yes — Razorpay, Cashfree, PayU, and PhonePe Business for UPI, netbanking, wallets, and card payments. We handle the full integration including webhook handling, reconciliation, and GST-compliant invoice generation."],
-];
-
-const PRICING: [string,string][] = [
-  ["Marketing website (5–15 pages)","₹1.5–5 lakhs"],
-  ["Corporate website with CMS","₹3–8 lakhs"],
-  ["SaaS MVP (core features)","₹8–20 lakhs"],
-  ["Full SaaS platform","₹20–50 lakhs"],
-  ["Custom e-commerce platform","₹10–30 lakhs"],
-  ["Performance optimisation","₹1–4 lakhs"],
-];
-
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQS.map(([q, a]) => ({
-    "@type": "Question",
-    name: q as string,
-    acceptedAnswer: { "@type": "Answer", text: a as string },
-  })),
-};
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://www.crenosoft.in/services/web-development/#service",
-  name: "Web Development",
-  provider: { "@id": "https://www.crenosoft.in/#organization" },
-  areaServed: { "@type": "Country", name: "India" },
-  url: "https://www.crenosoft.in/services/web-development",
-  description: metadata.description as string,
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home",     item: "https://www.crenosoft.in" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://www.crenosoft.in/services" },
-    { "@type": "ListItem", position: 3, name: "Web Development",   item: "https://www.crenosoft.in/services/web-development" },
+  [
+    "Why Next.js over WordPress or Webflow?",
+    "WordPress and Webflow are good tools for certain use cases—blogs, simple corporate sites. But for anything that needs custom functionality, high performance, or is likely to evolve significantly, Next.js gives you a codebase you actually own and control. No plugin compatibility issues, no security vulnerabilities from unmaintained extensions, and no performance ceiling imposed by a platform. You can hire any React developer to maintain it—you're not locked into a Webflow expert. Full technical breakdown: Next.js SEO in 2025.",
   ],
-};
+  [
+    "How much does web development cost in India?",
+    "Indicative ranges: Marketing website (5-15 pages) ₹1.5-5 lakhs, corporate website with CMS ₹3-8 lakhs, SaaS MVP (core features) ₹8-20 lakhs, full SaaS platform ₹20-50 lakhs, custom e-commerce ₹10-30 lakhs, performance optimization audit and fixes ₹1-4 lakhs. All prices exclude GST. We give detailed estimates after reviewing your specific requirements—not ballpark figures from a 20-minute call. Factors: number of pages, custom features, integrations, SEO complexity, and timeline.",
+  ],
+  [
+    "Do you build multilingual websites?",
+    "Yes. We've built sites in Hindi, Tamil, Telugu, Marathi, Bengali, Gujarati, and other regional languages with proper i18n support (next-intl or react-i18next), hreflang configuration for regional SEO, correct text rendering for Devanagari and other scripts, and culturally appropriate design adaptations. Common for e-commerce sites targeting tier 2/3 cities and government/public sector projects.",
+  ],
+  [
+    "Can you take over a half-built or broken website project?",
+    "Yes, but we do a code review first (₹15,000-30,000 for 1-2 day audit). We need to understand the architecture, identify technical debt, estimate what getting to a maintainable state would require, and assess whether continuing or rebuilding is more cost-effective. We give you an honest assessment—including if we think a rebuild is cleaner than patching. We've rescued 20+ projects from other agencies, offshore teams, or abandoned freelancers.",
+  ],
+  [
+    "How do you handle post-launch maintenance and updates?",
+    "We offer monthly retainers (₹1-4 lakhs/month depending on site complexity and traffic): security updates, dependency upgrades, performance monitoring (Core Web Vitals, uptime), Google Search Console reviews, bug fixes, and small feature additions (10-20 hours/month). We don't disappear after launch. Clients typically stay with us for 12-24 months, then either take maintenance internal or continue on a reduced retainer.",
+  ],
+  [
+    "Do you integrate with Indian payment gateways?",
+    "Yes—Razorpay, Cashfree, PayU, and PhonePe Business for UPI, netbanking, wallets, and card payments. We handle the full integration: payment flow UI, webhook handling for payment status, reconciliation, GST-compliant invoice generation, and refund workflows. We've processed ₹100+ crores in payments through integrations we've built. All tested on real transactions in sandbox and production.",
+  ],
+  [
+    "What's your approach to SEO for web development?",
+    "SEO is built into development, not added later. Every page has: primary keyword in H1 and title tag, semantic HTML (header, nav, main, article, section), Schema.org JSON-LD markup (Organization, WebPage, BreadcrumbList, Product for e-commerce), optimized meta descriptions (140-160 chars), canonical URLs, sitemap.xml generation, robots.txt configuration, and structured internal linking. Sites launch with 90+ Lighthouse SEO scores. Post-launch, we track Google Search Console for indexing and ranking. See blog post: Next.js SEO Guide 2025.",
+  ],
+  [
+    "Can you migrate our existing site to Next.js without losing SEO rankings?",
+    "Yes—we've done 30+ migrations from WordPress, Wix, Shopify, and custom PHP/Ruby stacks to Next.js without ranking drops. Process: audit current site for all indexed URLs, map old URLs to new URL structure, implement 301 redirects for every changed URL, preserve all Schema markup, maintain or improve Core Web Vitals scores, submit new sitemap to Google Search Console, and monitor rankings weekly for 3 months. Most sites see ranking improvements within 60-90 days due to better performance.",
+  ],
+  [
+    "Do you provide hosting or just the codebase?",
+    "Both options. We can deploy to Vercel (₹0-5,000/month for most sites, auto-scaling), AWS (EC2 + RDS + S3 + CloudFront, ₹5,000-30,000/month), or your own infrastructure. We provide full DevOps setup: CI/CD pipelines (GitHub Actions), staging + production environments, SSL certificates, DNS configuration, database backups, and monitoring (Sentry for errors, Vercel Analytics or Google Analytics for traffic). Or we hand over the codebase and documentation for your team to deploy.",
+  ],
+  [
+    "What happens if we need changes after the project is delivered?",
+    "Small bug fixes (within 30 days of launch) are covered under warranty—no charge. New features, design changes, or functionality additions are quoted separately. We typically bill ₹3,000-8,000/hour for post-launch work depending on complexity. Most clients opt for a monthly retainer (₹1-4 lakhs/month) which includes 10-20 hours of development time for ongoing improvements. Change requests go through a formal process: scope definition, estimate, approval, then implementation.",
+  ],
+];
 
-export default function Page() {
+const RELATED_SERVICES = [
+  {
+    title: "MVP Development",
+    description: "Launch your product in 8-12 weeks",
+    href: "/services/mvp-development",
+  },
+  {
+    title: "Mobile App Development",
+    description: "iOS, Android, React Native, Flutter",
+    href: "/services/mobile-app-development",
+  },
+  {
+    title: "Custom Software Development",
+    description: "Tailored solutions for your business",
+    href: "/services/custom-software-development",
+  },
+  {
+    title: "API Development",
+    description: "RESTful APIs and microservices",
+    href: "/services/api-development",
+  },
+];
+
+export default function WebDevelopmentPage() {
+  // Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.crenosoft.in/services/web-development/#service",
+    name: "Custom Web Development Services",
+    description: metadata.description,
+    provider: {
+      "@id": "https://www.crenosoft.in/#organization",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "India",
+    },
+    url: "https://www.crenosoft.in/services/web-development",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Web Development Services",
+      itemListElement: CAPABILITIES.map((cap) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: cap.title,
+          description: cap.description,
+        },
+      })),
+    },
+  };
+
+  // FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer,
+      },
+    })),
+  };
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.crenosoft.in",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://www.crenosoft.in/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Web Development",
+        item: "https://www.crenosoft.in/services/web-development",
+      },
+    ],
+  };
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <style>{`
-        .cp-card:hover{transform:translateY(-3px)!important;box-shadow:0 12px 32px rgba(0,0,0,.08)!important}
-        @media(max-width:900px){.cap-grid{grid-template-columns:repeat(2,1fr)!important}.price-grid{grid-template-columns:1fr!important}}
-        @media(max-width:600px){.cap-grid{grid-template-columns:1fr!important}}
-      `}</style>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
-      {/* Hero */}
-      <section style={{ background:"#f5f5f7",paddingTop:120,paddingBottom:80,paddingLeft:24,paddingRight:24,textAlign:"center",position:"relative",overflow:"hidden",borderBottom:"1px solid #e5e5ea" }}>
-        <div style={{ position:"relative",zIndex:1,maxWidth:720,margin:"0 auto" }}>
-          <Link href="/services" style={{ display:"inline-block",fontSize:13,color:"#86868b",textDecoration:"none",marginBottom:28 }}>← All Services</Link>
-          <div style={{ fontSize:56,marginBottom:20 }}>🌐</div>
-          <h1 style={{ fontSize:"clamp(36px,6vw,64px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.04em",lineHeight:1.06,marginBottom:20 }}>Web Development</h1>
-          <p style={{ fontSize:18,color:"#6e6e73",maxWidth:560,margin:"0 auto 40px",lineHeight:1.65 }}>
-            Fast, well-structured web applications and websites that rank on Google, handle real traffic, and are built to grow with your business — not fall over the moment you get featured somewhere.
-          </p>
-          <Link href="/contact" style={{ display:"inline-flex",alignItems:"center",gap:8,background:"#3d3d3d",color:"#fff",padding:"14px 28px",borderRadius:100,fontWeight:600,fontSize:15,textDecoration:"none" }}>
-            Get Started →
-          </Link>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section style={{ background:"#fff",padding:"72px 24px" }}>
-        <div style={{ maxWidth:720,margin:"0 auto" }}>
-          <h2 style={{ fontSize:"clamp(22px,3vw,34px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.03em",marginBottom:20,lineHeight:1.2 }}>What Good Web Development Actually Means in 2025</h2>
-          <p style={{ fontSize:16,color:"#6e6e73",lineHeight:1.78,marginBottom:16 }}>
-            A website that loads in 4 seconds loses 25% of visitors before the first impression.{" "}
-            <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener noreferrer" style={{ color:"#3d3d3d",fontWeight:500 }}>Google&apos;s Core Web Vitals</a>{" "}
-            are a confirmed ranking signal — a slow site is a penalised site. A SaaS application with poor architecture becomes a rewrite candidate within 18 months of launch.
-          </p>
-          <p style={{ fontSize:16,color:"#6e6e73",lineHeight:1.78,marginBottom:16 }}>
-            Our primary stack is{" "}
-            <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" style={{ color:"#3d3d3d",fontWeight:500 }}>Next.js</a>{" "}
-            with React and TypeScript, deployed on{" "}
-            <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" style={{ color:"#3d3d3d",fontWeight:500 }}>Vercel</a>{" "}
-            or AWS. This combination gives you server-side rendering for SEO, edge caching for performance, and the best developer experience for production web applications.
-          </p>
-          <p style={{ fontSize:16,color:"#6e6e73",lineHeight:1.78 }}>
-            Our clients consistently see 20–40% organic traffic increases within 90 days of launching on Next.js App Router. Read why:{" "}
-            <Link href="/blog/nextjs-seo-2025" style={{ color:"#3d3d3d",fontWeight:500 }}>Next.js in 2025: Why It&apos;s Still the Best Choice for SEO-Focused Web Apps →</Link>
-          </p>
-        </div>
-      </section>
-
-      {/* Capabilities */}
-      <section style={{ background:"#f5f5f7",padding:"80px 24px" }}>
-        <div style={{ maxWidth:1160,margin:"0 auto" }}>
-          <div style={{ textAlign:"center",marginBottom:52 }}>
-            <p style={{ fontSize:12,fontWeight:700,color:"#3d3d3d",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>What We Build</p>
-            <h2 style={{ fontSize:"clamp(28px,4vw,48px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.04em" }}>Our Web Development Services</h2>
-          </div>
-          <div className="cap-grid" style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:14 }}>
-            {CAPS.map(([icon,title,desc])=>(
-              <div key={title as string} className="cp-card" style={{ background:"#fff",borderRadius:18,padding:"28px 24px",border:"1px solid rgba(0,0,0,0.06)",transition:"transform 0.25s,box-shadow 0.25s" }}>
-                <div style={{ fontSize:28,marginBottom:14 }}>{icon}</div>
-                <h3 style={{ fontSize:16,fontWeight:700,color:"#1d1d1f",marginBottom:8 }}>{title}</h3>
-                <p style={{ fontSize:14,color:"#6e6e73",lineHeight:1.65 }}>{desc}</p>
+      <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden border-b border-slate-200 bg-white">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-70" />
+          <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="mb-6 inline-block rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-4 shadow-lg">
+                <span className="text-5xl">🌐</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack */}
-      <section style={{ background:"#fff",padding:"64px 24px" }}>
-        <div style={{ maxWidth:720,margin:"0 auto" }}>
-          <h2 style={{ fontSize:"clamp(22px,3vw,34px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.03em",marginBottom:24,textAlign:"center" as const }}>Our Technology Stack</h2>
-          <div style={{ display:"flex",flexDirection:"column" as const,gap:0,border:"1px solid #e5e5ea",borderRadius:16,overflow:"hidden" }}>
-            {([
-              ["Frontend","Next.js 14/15, React 18/19, TypeScript, Tailwind CSS"],
-              ["Auth","Clerk, Auth.js, JWT"],
-              ["Database","PostgreSQL, Redis, Supabase, MongoDB"],
-              ["ORM","Prisma, Drizzle"],
-              ["Payments","Razorpay, Stripe, PhonePe, Cashfree"],
-              ["Hosting","Vercel, AWS (ECS, Lambda), GCP Cloud Run"],
-              ["CMS","Sanity, Contentful, Strapi, MDX"],
-              ["Testing","Vitest, Playwright, Cypress"],
-            ] as [string,string][]).map(([layer,tools],i)=>(
-              <div key={layer} style={{ display:"grid",gridTemplateColumns:"130px 1fr",padding:"14px 20px",borderBottom:i<7?"1px solid #e5e5ea":"none",background:i%2===0?"#fff":"#fafafa" }}>
-                <span style={{ fontSize:13,fontWeight:700,color:"#3d3d3d" }}>{layer}</span>
-                <span style={{ fontSize:13,color:"#6e6e73" }}>{tools}</span>
+              <h1 className="mb-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                Custom Web Development Services
+              </h1>
+              <p className="mx-auto mb-8 max-w-3xl text-xl text-slate-600">
+                Fast, well-structured web applications and websites that rank on Google, handle real traffic, and are built to grow with your business—not fall over the moment you get featured somewhere.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <Link
+                  href="/contact"
+                  className="rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+                >
+                  Start Your Project
+                </Link>
+                <Link
+                  href="#capabilities"
+                  className="rounded-lg border-2 border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 transition-all hover:border-slate-400 hover:shadow-md"
+                >
+                  Explore Capabilities
+                </Link>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Process */}
-      <section style={{ background:"#f5f5f7",padding:"80px 24px" }}>
-        <div style={{ maxWidth:720,margin:"0 auto" }}>
-          <div style={{ textAlign:"center",marginBottom:52 }}>
-            <p style={{ fontSize:12,fontWeight:700,color:"#3d3d3d",letterSpacing:"0.1em",textTransform:"uppercase" as const,marginBottom:12 }}>How We Work</p>
-            <h2 style={{ fontSize:"clamp(26px,3.5vw,44px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.03em" }}>Our Development Process</h2>
+        {/* Introduction */}
+        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="prose prose-lg mx-auto max-w-4xl">
+            <h2 className="mb-6 text-3xl font-bold text-slate-900">
+              Modern Web Development for Indian Businesses
+            </h2>
+            <p className="text-slate-700">
+              You don't need another WordPress site with 40 plugins that breaks every time one of them updates. You don't need a Wix template that looks like every other startup. You need a custom web application or website built with modern frameworks—Next.js, React, TypeScript—that gives you full control, scales with your business, and ranks on Google.
+            </p>
+            <p className="text-slate-700">
+              At Crenosoft, we're a custom web development company based in India that specializes in building production-ready web applications for startups, growing companies, and enterprises. Whether you're launching an <Link href="/services/mvp-development" className="text-blue-600 hover:underline">MVP</Link>, building a SaaS platform, or creating a high-performance marketing site, we handle the entire lifecycle—from design to deployment to ongoing optimization.
+            </p>
+            <p className="text-slate-700">
+              We build with Next.js because it's the best framework for SEO, performance, and developer experience. React for complex UIs. TypeScript for maintainability. Tailwind for design systems that scale. PostgreSQL or MongoDB for databases. Razorpay for payments. AWS or Vercel for hosting. Every tech choice is justified by your requirements—not our preferences. Read our technical deep-dive: <a href="https://nextjs.org/docs" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Next.js Documentation →</a>
+            </p>
+            <p className="text-slate-700">
+              Under India's <a href="https://www.meity.gov.in/data-protection-framework" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">DPDP Act 2023</a>, every web application that collects personal data must implement consent management, data localization, and audit logs. We build these requirements in from the start—not as an afterthought. For regulated industries (fintech, healthcare, lending), we also handle RBI, ABDM, and SEBI compliance.
+            </p>
           </div>
-          <div style={{ display:"flex",flexDirection:"column" as const,gap:14 }}>
-            {PROCESS.map(([step,title,desc])=>(
-              <div key={step as string} style={{ display:"flex",gap:24,background:"#fff",borderRadius:16,padding:"28px 24px",alignItems:"flex-start" }}>
-                <div style={{ fontSize:28,fontWeight:900,color:"#e5e5ea",flexShrink:0,lineHeight:1,width:40,textAlign:"center" as const }}>{step}</div>
-                <div>
-                  <h3 style={{ fontSize:16,fontWeight:700,color:"#1d1d1f",marginBottom:6 }}>{title}</h3>
-                  <p style={{ fontSize:14,color:"#6e6e73",lineHeight:1.65 }}>{desc}</p>
+        </section>
+
+        {/* Capabilities Grid */}
+        <section id="capabilities" className="border-y border-slate-200 bg-slate-50 py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-slate-900">
+                What We Build
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-slate-600">
+                From marketing sites to complex SaaS platforms, we cover the full spectrum of custom web development.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {CAPABILITIES.map((capability) => (
+                <div
+                  key={capability.title}
+                  className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md"
+                >
+                  <div className="mb-4 text-4xl">{capability.icon}</div>
+                  <h3 className="mb-3 text-lg font-semibold text-slate-900">
+                    {capability.title}
+                  </h3>
+                  <p className="leading-relaxed text-slate-600">
+                    {capability.description}
+                  </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Pricing */}
-      <section style={{ background:"#fff",padding:"72px 24px" }}>
-        <div style={{ maxWidth:720,margin:"0 auto" }}>
-          <div style={{ textAlign:"center",marginBottom:44 }}>
-            <h2 style={{ fontSize:"clamp(24px,3.5vw,40px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.03em",marginBottom:12 }}>Pricing</h2>
-            <p style={{ fontSize:15,color:"#6e6e73" }}>Indicative ranges based on completed projects. All prices exclude GST.</p>
+        {/* Tech Stack Section */}
+        <section className="py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-slate-900">
+                Our Tech Stack
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-slate-600">
+                Modern, battle-tested technologies that scale from MVP to enterprise.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {TECH_STACK.map((stack) => (
+                <div
+                  key={stack.category}
+                  className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="text-3xl">{stack.icon}</span>
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      {stack.category}
+                    </h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-slate-600">
+                    {stack.technologies}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="price-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:10 }}>
-            {PRICING.map(([type,range])=>(
-              <div key={type} style={{ background:"#f5f5f7",borderRadius:14,padding:"20px 22px",border:"1px solid #e5e5ea",display:"flex",justifyContent:"space-between",alignItems:"center",gap:16 }}>
-                <span style={{ fontSize:14,color:"#1d1d1f",fontWeight:500 }}>{type}</span>
-                <span style={{ fontSize:14,color:"#3d3d3d",fontWeight:700,whiteSpace:"nowrap" as const }}>{range}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQs */}
-      <section style={{ background:"#f5f5f7",padding:"80px 24px" }}>
-        <div style={{ maxWidth:720,margin:"0 auto" }}>
-          <h2 style={{ fontSize:"clamp(26px,3.5vw,40px)",fontWeight:700,color:"#1d1d1f",letterSpacing:"-0.03em",textAlign:"center" as const,marginBottom:48 }}>Frequently Asked Questions</h2>
-          <div style={{ display:"flex",flexDirection:"column" as const,gap:0 }}>
-            {FAQS.map(([q,a])=>(
-              <div key={q as string} style={{ padding:"24px 0",borderBottom:"1px solid #e5e5ea" }}>
-                <h3 style={{ fontSize:16,fontWeight:700,color:"#1d1d1f",marginBottom:10 }}>{q}</h3>
-                <p style={{ fontSize:14,color:"#6e6e73",lineHeight:1.75 }}>{a}</p>
-              </div>
-            ))}
+        {/* Process Section */}
+        <section className="border-y border-slate-200 bg-slate-50 py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-slate-900">
+                Our Development Process
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-slate-600">
+                A transparent, collaborative 4-phase approach that delivers working software every 2 weeks.
+              </p>
+            </div>
+            <div className="grid gap-8 lg:grid-cols-2">
+              {PROCESS_STEPS.map((step) => (
+                <div
+                  key={step.number}
+                  className="relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md"
+                >
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-xl font-bold text-white">
+                    {step.number}
+                  </div>
+                  <h3 className="mb-3 text-xl font-semibold text-slate-900">
+                    {step.title}
+                  </h3>
+                  <p className="leading-relaxed text-slate-600">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Blog Links */}
-      <section style={{ background:"#fff",padding:"56px 24px",borderTop:"1px solid #e5e5ea" }}>
-        <div style={{ maxWidth:720,margin:"0 auto" }}>
-          <p style={{ fontSize:13,fontWeight:700,color:"#86868b",letterSpacing:"0.08em",textTransform:"uppercase" as const,marginBottom:20,textAlign:"center" as const }}>Related Reading</p>
-          <div style={{ display:"flex",flexDirection:"column" as const,gap:10 }}>
-            {([
-              ["Next.js SEO in 2025: App Router, Core Web Vitals, and Performance","/blog/nextjs-seo-2025"],
-              ["How to Build an AI-Powered SaaS Product in India in 2025","/blog/building-ai-powered-saas-india-2025"],
-              ["UI/UX Design Trends for Indian Products in 2025","/blog/ui-ux-design-trends-2025-india"],
-              ["React Native vs Flutter: Which Should Your Startup Choose?","/blog/react-native-vs-flutter"],
-            ] as [string,string][]).map(([label,href])=>(
-              <Link key={href} href={href} style={{ background:"#f5f5f7",borderRadius:12,padding:"16px 20px",border:"1px solid #e5e5ea",fontSize:14,fontWeight:500,color:"#1d1d1f",textDecoration:"none",display:"flex",justifyContent:"space-between",alignItems:"center" }}>
-                {label}<span style={{ color:"#86868b",fontSize:16 }}>→</span>
-              </Link>
-            ))}
+        {/* Benefits Section */}
+        <section className="py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-slate-900">
+                Why Choose Crenosoft for Web Development
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-slate-600">
+                What makes us different from other web development companies in India.
+              </p>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {BENEFITS.map((benefit) => (
+                <div
+                  key={benefit.title}
+                  className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md"
+                >
+                  <div className="mb-4 text-4xl">{benefit.icon}</div>
+                  <h3 className="mb-3 text-lg font-semibold text-slate-900">
+                    {benefit.title}
+                  </h3>
+                  <p className="leading-relaxed text-slate-600">
+                    {benefit.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Related + CTA */}
-      <section style={{ background:"#f5f5f7",padding:"40px 24px",textAlign:"center" as const,borderBottom:"1px solid #e5e5ea" }}>
-        <p style={{ fontSize:13,color:"#86868b",marginBottom:14 }}>Related services</p>
-        <div style={{ display:"flex",gap:10,justifyContent:"center",flexWrap:"wrap" }}>
-          {([["UI/UX Design","/services/ui-ux-design"],["AI Software Development","/services/ai-software-development"],["Mobile App Development","/services/mobile-app-development"],["Cloud Solutions","/services/cloud-solutions"]] as [string,string][]).map(([n,h])=>(
-            <Link key={h} href={h} style={{ border:"1px solid #d2d2d7",color:"#1d1d1f",padding:"8px 18px",borderRadius:100,fontSize:13,fontWeight:500,textDecoration:"none",background:"#fff" }}>{n} →</Link>
-          ))}
-        </div>
-      </section>
-      <section style={{ background:"#3d3d3d",padding:"72px 24px",textAlign:"center" as const }}>
-        <h2 style={{ fontSize:"clamp(24px,3.5vw,40px)",fontWeight:700,color:"#fff",letterSpacing:"-0.03em",marginBottom:14 }}>Let&apos;s build something that actually ranks and converts</h2>
-        <p style={{ fontSize:16,color:"rgba(255,255,255,.7)",marginBottom:32,maxWidth:480,margin:"0 auto 32px" }}>Share your project and we will give you a clear estimate of scope, cost, and timeline. No padded quotes, no vague &ldquo;it depends&rdquo; without explanation.</p>
-        <Link href="/contact" style={{ display:"inline-flex",alignItems:"center",gap:8,background:"#fff",color:"#3d3d3d",padding:"13px 26px",borderRadius:100,fontWeight:700,fontSize:14,textDecoration:"none" }}>Book Free Consultation →</Link>
-      </section>
+        {/* Use Cases Section */}
+        <section className="border-y border-slate-200 bg-slate-50 py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-slate-900">
+                What We've Built
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-slate-600">
+                Real-world web applications and websites across industries.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {USE_CASES.map((useCase) => (
+                <div
+                  key={useCase.title}
+                  className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-blue-300 hover:shadow-md"
+                >
+                  <div className="mb-4 text-4xl">{useCase.icon}</div>
+                  <h3 className="mb-3 text-lg font-semibold text-slate-900">
+                    {useCase.title}
+                  </h3>
+                  <p className="leading-relaxed text-slate-600">
+                    {useCase.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <h2 className="mb-12 text-center text-3xl font-bold text-slate-900">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-6">
+              {FAQS.map(([question, answer], index) => (
+                <details
+                  key={index}
+                  className="group rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md"
+                >
+                  <summary className="cursor-pointer text-lg font-semibold text-slate-900 transition-colors group-hover:text-blue-600">
+                    {question}
+                  </summary>
+                  <p className="mt-4 leading-relaxed text-slate-600">{answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="border-t border-slate-200 bg-slate-50 py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="mb-8 text-center text-2xl font-bold text-slate-900">
+              Related Services
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {RELATED_SERVICES.map((service) => (
+                <Link
+                  key={service.title}
+                  href={service.href}
+                  className="group rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition-all hover:scale-105 hover:border-blue-300 hover:shadow-md"
+                >
+                  <h3 className="mb-2 font-semibold text-slate-900 group-hover:text-blue-600">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-slate-600">{service.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="relative overflow-hidden border-t border-slate-200 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700 py-16">
+          <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
+              Ready to Build Your Web Application?
+            </h2>
+            <p className="mb-8 text-lg text-blue-100">
+              Tell us about your project. We'll provide a technical proposal, timeline, and fixed-cost estimate within 3-5 business days.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block rounded-lg bg-white px-8 py-4 font-semibold text-blue-600 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+            >
+              Start Your Web Project
+            </Link>
+          </div>
+        </section>
+      </main>
     </>
   );
 }
