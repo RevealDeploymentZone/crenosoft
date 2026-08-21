@@ -9,6 +9,7 @@ const NAV_SERVICES = [
   { name: "MVP Development", href: "/services/mvp-development", desc: "Launch your product in 8-12 weeks" },
   { name: "Legacy Modernization", href: "/services/legacy-modernization", desc: "Migrate outdated systems to modern stacks" },
   { name: "IT Staff Augmentation", href: "/services/it-staff-augmentation", desc: "Hire skilled developers on demand" },
+  { name: "Offshore Software Development", href: "/services/offshore-software-development", desc: "Dedicated teams in India" },
   { name: "Cloud Consulting", href: "/services/cloud-consulting", desc: "AWS, GCP, Azure & DevOps expertise" },
   { name: "Web Development", href: "/services/web-development", desc: "Next.js, React & full-stack" },
   { name: "Mobile App Development", href: "/services/mobile-app-development", desc: "iOS, Android & cross-platform" },

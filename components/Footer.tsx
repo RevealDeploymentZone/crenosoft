@@ -7,6 +7,7 @@ const SERVICES = [
   ["MVP Development", "/services/mvp-development"],
   ["Legacy Modernization", "/services/legacy-modernization"],
   ["IT Staff Augmentation", "/services/it-staff-augmentation"],
+  ["Offshore Software Development", "/services/offshore-software-development"],
   ["Cloud Consulting", "/services/cloud-consulting"],
   ["Web Development", "/services/web-development"],
   ["Mobile App Development", "/services/mobile-app-development"],
